@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akoni Virtual | VA &amp; Transaction Support for Real Estate Agents</title>
+<meta name="description" content="Less busywork. More closings. Akoni Virtual pairs agents with a dedicated VA and the VA Command Center — leads, showings, deadlines, disclosures and client updates handled from pre-listing to close.">
+<link rel="canonical" href="https://akonivirtual.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://akonivirtual.com/">
+<meta property="og:site_name" content="Akoni Virtual">
+<meta property="og:title" content="Akoni Virtual | VA &amp; Transaction Support for Real Estate Agents">
+<meta property="og:description" content="A dedicated VA plus the VA Command Center. Leads, showings, deadlines and client updates handled from pre-listing to close.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Akoni Virtual | Less busywork. More closings.">
+<meta name="twitter:description" content="A dedicated VA plus the VA Command Center for real estate agents.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Akoni Virtual","url":"https://akonivirtual.com/","email":"hello@akonivirtual.com","description":"Dedicated virtual assistants and the VA Command Center for real estate agents, teams and brokerages.","areaServed":{"@type":"Country","name":"United States"},"offers":{"@type":"Offer","name":"Full-time real estate VA","price":"500","priceCurrency":"USD","description":"Full-time dedicated VA, billed monthly"},"serviceType":["Real estate virtual assistant","Transaction support","Lead follow-up","Showing coordination"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-900:#0b1f3a; --navy-800:#11294b; --navy-700:#1a3868; --navy-600:#22467f;
+  --navy-500:#2f5aa0; --brand:#1E4E8C; --accent:#3b82f6; --accent-soft:#60a5fa;
+  --ink:#0f1e36; --body:#475569; --muted:#64748b; --line:#e2e8f2; --bg:#f5f7fb; --tint:#eef4ff;
+  --amber:#d98a00; --red:#e23b50;
+  --r:18px; --shadow:0 1px 2px rgba(11,31,58,.05),0 12px 32px rgba(11,31,58,.08);
+  --shadow-lg:0 30px 80px rgba(11,31,58,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+img,svg{display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3{letter-spacing:-.02em;line-height:1.12}
+.sec{padding:110px 0}
+.sec-head{max-width:680px;margin:0 auto 56px;text-align:center}
+.sec-head h2{font-size:clamp(30px,4vw,44px);font-weight:800}
+.sec-head p{margin-top:16px;font-size:18px;color:var(--body)}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:9px;height:52px;padding:0 26px;border-radius:13px;font-weight:700;font-size:15.5px;transition:transform .2s,box-shadow .2s,background .2s}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:linear-gradient(120deg,var(--accent),#2f6ce0);color:#fff;box-shadow:0 10px 26px rgba(59,130,246,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(59,130,246,.45)}
+.btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-white{background:#fff;color:var(--navy-700)}
+.btn-white:hover{transform:translateY(-2px)}
+.btn-line{border:1px solid rgba(255,255,255,.3);color:#fff}
+.btn-line:hover{background:rgba(255,255,255,.08)}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,box-shadow .3s,backdrop-filter .3s}
+.nav.scrolled{background:rgba(255,255,255,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line)}
+.nav-in{height:76px;display:flex;align-items:center;gap:28px}
+.logo{display:flex;align-items:center;gap:11px}
+.mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7aa6f5);display:grid;place-items:center;color:#fff;font-weight:800;font-size:18px;box-shadow:0 6px 18px rgba(59,130,246,.4);flex:none}
+.logo b{display:block;font-size:18px;font-weight:800;letter-spacing:-.3px;line-height:1}
+.logo small{display:block;font-size:10.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-top:4px;font-weight:600}
+.nav-links{display:flex;gap:28px;margin-left:auto;font-size:14.5px;font-weight:600;color:var(--body)}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.nav-cta .signin{font-weight:700;font-size:14.5px;padding:0 14px}
+.nav-cta .signin:hover{color:var(--accent)}
+.nav-cta .btn{height:44px;padding:0 20px;font-size:14.5px}
+.burger{display:none;width:44px;height:44px;border-radius:11px;border:1px solid var(--line);place-items:center;margin-left:auto}
+.burger svg{width:20px;height:20px}
+.mmenu{display:none}
+
+/* hero */
+.hero{position:relative;padding:160px 0 90px;overflow:hidden;background:
+  radial-gradient(900px 520px at 85% 0%,rgba(59,130,246,.14),transparent 60%),
+  radial-gradient(700px 500px at 0% 100%,rgba(47,90,160,.10),transparent 60%),
+  linear-gradient(180deg,#f7faff 0%,#fff 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(34,70,127,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(34,70,127,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 80%);pointer-events:none}
+.hero-top{position:relative;text-align:center;max-width:860px;margin:0 auto}
+.hero h1{font-size:clamp(40px,6.2vw,70px);font-weight:800;letter-spacing:-.035em}
+.hero h1 .hl{background:linear-gradient(110deg,var(--brand),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lede{font-size:clamp(17px,2vw,20px);color:var(--body);max-width:660px;margin:24px auto 0}
+.hero-ctas{display:flex;gap:12px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+.hero-note{margin-top:22px;font-size:14px;color:var(--muted);display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
+.hero-note span{display:flex;align-items:center;gap:7px}
+.hero-note svg{width:16px;height:16px;color:var(--accent)}
+
+/* app mockup */
+.stage{position:relative;max-width:1080px;margin:72px auto 0;perspective:1600px}
+.browser{border-radius:18px;background:#fff;border:1px solid rgba(34,70,127,.12);box-shadow:var(--shadow-lg);overflow:hidden;transform-origin:50% 0}
+.bbar{height:40px;display:flex;align-items:center;gap:7px;padding:0 16px;background:#f3f6fb;border-bottom:1px solid var(--line)}
+.bbar i{width:11px;height:11px;border-radius:50%;background:#d6dde8}
+.bbar .url{margin:0 auto;height:24px;padding:0 14px;border-radius:7px;background:#fff;border:1px solid var(--line);font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.bbar .url svg{width:11px;height:11px}
+.app{display:grid;grid-template-columns:200px 1fr;min-height:470px;font-size:12px}
+.side{background:linear-gradient(185deg,var(--navy-900),var(--navy-800));padding:16px 12px;color:#c2d2ea}
+.side .lg{display:flex;align-items:center;gap:9px;padding:2px 6px 16px}
+.side .lg .mark{width:28px;height:28px;border-radius:8px;font-size:13px}
+.side .lg b{color:#fff;font-size:13px}
+.side .lg small{font-size:8px;color:#8aa3c7;letter-spacing:.1em;text-transform:uppercase;display:block}
+.side .lab{font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:#6f88ad;font-weight:700;margin:12px 8px 6px}
+.side .it{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:8px;margin-bottom:2px;font-weight:500}
+.side .it svg{width:13px;height:13px;opacity:.85;flex:none}
+.side .it.on{background:linear-gradient(100deg,rgba(59,130,246,.92),rgba(59,130,246,.6));color:#fff}
+.side .it .bd{margin-left:auto;background:rgba(255,255,255,.16);border-radius:10px;padding:0 6px;font-size:9.5px;font-weight:700}
+.side .ag{display:flex;align-items:center;gap:8px;padding:5px 10px;font-size:11px}
+.side .ag i{width:7px;height:7px;border-radius:50%}
+.mainp{background:#eef1f6;display:flex;flex-direction:column}
+.topb{display:flex;align-items:center;gap:10px;padding:10px 16px;background:rgba(255,255,255,.75);border-bottom:1px solid var(--line)}
+.topb .ws{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:9px;padding:5px 10px}
+.topb .ws .av{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,#3b82f6,#7aa6f5);color:#fff;display:grid;place-items:center;font-size:8.5px;font-weight:800}
+.topb .ws b{font-size:11px;display:block;line-height:1.1}
+.topb .ws small{font-size:9px;color:var(--muted)}
+.topb .srch{flex:1;max-width:230px;height:28px;border:1px solid var(--line);background:#fff;border-radius:8px;display:flex;align-items:center;padding:0 10px;color:#94a3b8;font-size:10.5px}
+.topb .pb{margin-left:auto;height:28px;padding:0 12px;border-radius:8px;background:linear-gradient(120deg,var(--accent),#2f6ce0);color:#fff;font-weight:700;font-size:10.5px;display:flex;align-items:center}
+.dash{padding:14px 16px;display:grid;gap:12px}
+.gauges{display:grid;grid-template-columns:repeat(6,1fr);gap:9px}
+.g{background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 4px 11px;text-align:center}
+.g .gl{font-size:7.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.g .ring{position:relative;width:64%;margin:0 auto;aspect-ratio:1}
+.g .ring svg{width:100%;height:100%}
+.g .ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:16px;font-weight:800}
+.panels{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pn{background:#fff;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.pn .ph{display:flex;align-items:center;gap:6px;padding:8px 11px;border-bottom:1px solid var(--line);font-weight:700;font-size:11px}
+.pn .ph em{font-style:normal;background:#eef2f8;border-radius:8px;padding:0 6px;font-size:9.5px;color:#334155}
+.pn .ph span{margin-left:auto;color:var(--accent);font-weight:600;font-size:10px}
+.pn .row{display:flex;align-items:center;gap:8px;padding:7px 11px}
+.pn .row+.row{border-top:1px solid #eef2f7}
+.pn .av{width:22px;height:22px;border-radius:50%;background:#f1f4f9;border:1px solid var(--line);display:grid;place-items:center;font-size:8.5px;font-weight:700;color:#334155;flex:none}
+.pn .t{font-weight:600;font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pn .s{font-size:9px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pn .m{flex:1;min-width:0}
+.chip{font-size:8.5px;font-weight:700;border-radius:4px;padding:2px 6px;white-space:nowrap}
+.c-blue{background:rgba(59,130,246,.12);color:#2f6ce0}
+.c-navy{background:rgba(34,70,127,.1);color:var(--navy-600)}
+.c-amber{background:rgba(217,138,0,.13);color:#b06f00}
+.c-red{background:rgba(226,59,80,.11);color:var(--red)}
+.pn .tm{width:44px;flex:none;color:var(--muted);font-size:9.5px}
+
+.float{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 44px rgba(11,31,58,.16);padding:12px 14px;display:flex;gap:11px;align-items:center;font-size:12.5px;z-index:3}
+.float .fi{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:none}
+.float .fi svg{width:17px;height:17px}
+.float b{display:block;font-size:13px}
+.float small{color:var(--muted);font-size:11.5px}
+.f1{left:-46px;top:150px}
+.f2{right:-40px;top:76px}
+.f3{right:40px;bottom:-30px}
+
+/* trust strip */
+.strip{padding:44px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.strip-in{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.st{display:flex;gap:14px;align-items:center}
+.st .si{width:46px;height:46px;border-radius:13px;background:var(--tint);color:var(--brand);display:grid;place-items:center;flex:none}
+.st .si svg{width:22px;height:22px}
+.st b{display:block;font-size:16px;font-weight:800}
+.st span{font-size:13.5px;color:var(--muted);line-height:1.4;display:block}
+
+/* problem */
+.prob{background:var(--bg)}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(11,31,58,.12)}
+.card .ci{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:20px;background:var(--tint);color:var(--brand)}
+.card .ci svg{width:22px;height:22px}
+.card h3{font-size:19px;font-weight:700;margin-bottom:9px}
+.card p{color:var(--body);font-size:15.5px}
+
+/* how it works */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.steps .line{position:absolute;top:27px;left:12%;right:12%;height:2px;background:var(--line);z-index:0}
+.steps .line i{position:absolute;inset:0;background:linear-gradient(90deg,var(--brand),var(--accent));transform-origin:0 50%}
+.stp{position:relative;z-index:1;text-align:center;padding:0 8px}
+.stp .n{width:56px;height:56px;border-radius:50%;background:#fff;border:2px solid var(--accent);color:var(--brand);font-weight:800;font-size:19px;display:grid;place-items:center;margin:0 auto 22px;box-shadow:0 0 0 7px #fff}
+.stp h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.stp p{color:var(--body);font-size:15px}
+
+/* pipeline */
+.pipe{background:linear-gradient(180deg,var(--navy-900),var(--navy-800));color:#fff;position:relative;overflow:hidden}
+.pipe::before{content:"";position:absolute;right:-200px;top:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.35),transparent 70%)}
+.pipe .sec-head p{color:#b7c8e4}
+.pipe .kicker{color:var(--accent-soft)}
+.flow{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stage-c{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:24px;position:relative}
+.stage-c .sn{font-size:12px;font-weight:700;color:var(--accent-soft);letter-spacing:.1em;text-transform:uppercase}
+.stage-c h3{font-size:20px;margin:8px 0 10px}
+.stage-c p{font-size:14.5px;color:#b7c8e4}
+.stage-c ul{list-style:none;margin-top:16px;display:grid;gap:8px}
+.stage-c li{font-size:13.5px;color:#dce6f5;display:flex;gap:8px;align-items:flex-start}
+.stage-c li svg{width:15px;height:15px;color:var(--accent-soft);flex:none;margin-top:3px}
+.stage-c .arr{position:absolute;right:-14px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--accent);display:grid;place-items:center;z-index:2;box-shadow:0 0 0 5px var(--navy-900)}
+.stage-c .arr svg{width:13px;height:13px}
+.drawer-note{margin-top:28px;display:flex;align-items:center;gap:14px;justify-content:center;color:#b7c8e4;font-size:15px;text-align:center}
+.drawer-note svg{width:20px;height:20px;color:var(--accent-soft);flex:none}
+
+/* features */
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.ft{border:1px solid var(--line);border-radius:var(--r);padding:26px;background:#fff;transition:border-color .25s,transform .25s,box-shadow .25s}
+.ft:hover{border-color:rgba(59,130,246,.5);transform:translateY(-3px);box-shadow:var(--shadow)}
+.ft .ci{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#dbe9ff,#c2dbff);color:#2f6ce0;margin-bottom:18px}
+.ft .ci svg{width:21px;height:21px}
+.ft h3{font-size:16.5px;font-weight:700;margin-bottom:7px}
+.ft p{font-size:14.5px;color:var(--body)}
+
+/* team / collab */
+.collab{background:var(--bg)}
+.hub{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:28px;align-items:center}
+.hub-col{display:grid;gap:16px}
+.who{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;box-shadow:var(--shadow)}
+.who .wi{width:40px;height:40px;border-radius:12px;background:var(--tint);color:var(--brand);display:grid;place-items:center;flex:none}
+.who .wi svg{width:19px;height:19px}
+.who b{display:block;font-size:15px}
+.who span{font-size:13.5px;color:var(--body);line-height:1.45;display:block;margin-top:2px}
+.core{position:relative;aspect-ratio:1;max-width:380px;margin:0 auto;width:100%;display:grid;place-items:center}
+.core .orb{position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(59,130,246,.35)}
+.core .orb.o2{inset:14%;border-style:solid;border-color:rgba(59,130,246,.18)}
+.core .orb.o3{inset:28%;background:radial-gradient(circle,rgba(59,130,246,.14),transparent 70%);border:0}
+.core .ctr{position:relative;width:46%;aspect-ratio:1;border-radius:28%;background:linear-gradient(135deg,var(--brand),var(--accent));color:#fff;display:grid;place-items:center;text-align:center;box-shadow:0 24px 60px rgba(30,78,140,.4)}
+.core .ctr b{font-size:clamp(34px,5vw,52px);font-weight:800;line-height:1}
+.core .ctr small{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.85;display:block;margin-top:6px;font-weight:700}
+.core .dot{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(59,130,246,.18)}
+
+/* portals */
+.portals{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.ptxt h2{font-size:clamp(30px,4vw,42px);font-weight:800}
+.ptxt>p{font-size:18px;color:var(--body);margin-top:16px}
+.tabs{display:inline-flex;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:4px;margin-top:28px}
+.tabs button{padding:9px 18px;border-radius:9px;font-weight:700;font-size:14px;color:var(--muted);transition:.2s}
+.tabs button.on{background:#fff;color:var(--brand);box-shadow:0 2px 8px rgba(11,31,58,.08)}
+.plist{list-style:none;margin-top:24px;display:grid;gap:14px}
+.plist li{display:flex;gap:12px;font-size:15.5px;color:var(--body)}
+.plist li b{color:var(--ink)}
+.plist .ck{width:24px;height:24px;border-radius:50%;background:var(--tint);color:var(--brand);display:grid;place-items:center;flex:none}
+.plist .ck svg{width:13px;height:13px}
+.phones{position:relative;display:flex;justify-content:center;min-height:620px}
+.phone{width:300px;border-radius:44px;background:#0d1524;padding:11px;box-shadow:var(--shadow-lg);position:relative}
+.phone::before{content:"";position:absolute;top:20px;left:50%;transform:translateX(-50%);width:90px;height:24px;border-radius:14px;background:#0d1524;z-index:3}
+.scr{border-radius:34px;overflow:hidden;background:#F5F4F0;height:598px;position:relative}
+.pv{position:absolute;inset:0;transition:opacity .45s,transform .45s}
+.pv.off{opacity:0;transform:translateY(14px);pointer-events:none}
+.cd-hero{height:170px;background:linear-gradient(135deg,#2F6DB5,#1E4E8C 55%,#163A6B);position:relative;overflow:hidden}
+.cd-hero svg{position:absolute;right:-12px;bottom:-6px;width:210px;opacity:.22}
+.cd-hero .gr{position:absolute;left:16px;right:16px;bottom:14px;color:#fff;font-size:12px;font-weight:600}
+.cd-top{position:absolute;top:44px;left:16px;right:16px;display:flex;align-items:center;gap:8px;color:#fff}
+.cd-top .mk{width:26px;height:26px;border-radius:8px;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:11px;font-weight:800}
+.cd-top small{font-size:10px;opacity:.85}
+.cd-body{padding:14px;display:grid;gap:10px}
+.cd-card{background:#fff;border-radius:16px;padding:13px 14px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 6px 16px rgba(0,0,0,.04)}
+.cd-addr{font-size:19px;font-weight:700;font-family:Georgia,serif;letter-spacing:-.01em}
+.cd-city{font-size:11px;color:var(--muted)}
+.cd-prog{display:flex;align-items:center;gap:12px;margin-top:10px;background:#F5F4F0;border-radius:12px;padding:10px}
+.cd-prog .ring{width:52px;height:52px;position:relative;flex:none}
+.cd-prog .ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:12px}
+.cd-prog small{font-size:10px;color:var(--muted);display:block}
+.cd-prog strong{font-size:14px;font-family:Georgia,serif}
+.cd-now{background:#1E4E8C;color:#fff;border-radius:16px;padding:12px 14px;display:flex;gap:10px;align-items:center}
+.cd-now i{width:9px;height:9px;border-radius:50%;background:#9CC7F5;flex:none;box-shadow:0 0 0 4px rgba(156,199,245,.3)}
+.cd-now small{display:block;font-size:9.5px;opacity:.75}
+.cd-now b{font-size:13px}
+.cd-step{display:flex;gap:10px;align-items:center;padding:6px 0;font-size:12px}
+.cd-step .d{width:20px;height:20px;border-radius:50%;border:2px solid #E8E6E0;flex:none;display:grid;place-items:center}
+.cd-step.done .d{background:#1E4E8C;border-color:#1E4E8C}
+.cd-step.done .d svg{width:10px;height:10px}
+.cd-step.cur .d{border-color:#C39A4E;background:#F6EEDD}
+.cd-step.up{color:var(--muted)}
+.cd-h{font-size:12.5px;font-weight:700;margin-bottom:4px}
+.ap-head{background:linear-gradient(185deg,var(--navy-900),var(--navy-700));color:#fff;padding:52px 16px 18px}
+.ap-head small{font-size:10px;color:#8aa3c7;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.ap-head b{display:block;font-size:19px;margin-top:3px}
+.ap-g{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.ap-g div{background:rgba(255,255,255,.08);border-radius:11px;padding:8px;text-align:center}
+.ap-g b{font-size:18px;margin:0}
+.ap-g span{font-size:9px;color:#b7c8e4;text-transform:uppercase;letter-spacing:.06em}
+.ap-list{padding:12px;display:grid;gap:8px;background:#eef1f6;height:100%}
+.ap-row{background:#fff;border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;font-size:11.5px;border:1px solid var(--line)}
+.ap-row .av{width:28px;height:28px;border-radius:50%;background:#e8effb;color:var(--brand);display:grid;place-items:center;font-size:10px;font-weight:800;flex:none}
+.ap-row b{display:block;font-size:12px}
+.ap-row span{color:var(--muted);font-size:10px}
+.ap-row .chip{margin-left:auto}
+.ph-float{position:absolute;left:-30px;bottom:90px;z-index:4}
+
+/* do / don't */
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.dd-c{border-radius:var(--r);padding:34px}
+.dd-c.do{background:linear-gradient(160deg,#f2f7ff,#fff);border:1px solid #d6e4fb}
+.dd-c.dont{background:#fff;border:1px solid var(--line)}
+.dd-c h3{font-size:21px;font-weight:800;display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.dd-c h3 .ic{width:38px;height:38px;border-radius:11px;display:grid;place-items:center}
+.dd-c h3 svg{width:19px;height:19px}
+.dd-c.do h3 .ic{background:var(--accent);color:#fff}
+.dd-c.dont h3 .ic{background:#f1f4f9;color:var(--navy-600)}
+.dd-c ul{list-style:none;display:grid;gap:13px}
+.dd-c li{display:flex;gap:11px;font-size:15.5px;color:var(--body)}
+.dd-c li svg{width:18px;height:18px;flex:none;margin-top:3px}
+.dd-c.do li svg{color:var(--accent)}
+.dd-c.dont li svg{color:#94a3b8}
+.dd-foot{margin-top:24px;text-align:center;font-size:15px;color:var(--muted)}
+
+/* story */
+.story{background:var(--bg)}
+.story-in{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.yrs{position:relative;border-radius:24px;background:linear-gradient(150deg,var(--navy-700),var(--navy-900));color:#fff;padding:48px 40px;overflow:hidden}
+.yrs::after{content:"";position:absolute;right:-90px;bottom:-90px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.45),transparent 70%)}
+.yrs .big{font-size:clamp(90px,12vw,140px);font-weight:800;line-height:.9;letter-spacing:-.05em;background:linear-gradient(180deg,#fff,#9fc2ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.yrs p{font-size:18px;margin-top:10px;color:#dce6f5;max-width:260px;position:relative;z-index:1}
+.yrs .yl{display:flex;gap:10px;margin-top:30px;flex-wrap:wrap;position:relative;z-index:1}
+.yrs .yl span{font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14)}
+.story-txt h2{font-size:clamp(30px,4vw,42px);font-weight:800}
+.story-txt p{font-size:17px;color:var(--body);margin-top:18px}
+.quote{margin-top:28px;padding:22px 24px;border-left:3px solid var(--accent);background:#fff;border-radius:0 14px 14px 0;font-size:17px;font-weight:600;color:var(--navy-700);box-shadow:var(--shadow)}
+
+/* AI */
+.ai{position:relative;border-radius:28px;padding:56px;background:linear-gradient(120deg,#f2f7ff,#e6efff);border:1px solid #d6e4fb;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;overflow:hidden}
+.ai .soon{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin-bottom:12px}
+.ai h2{font-size:clamp(28px,3.6vw,38px);font-weight:800}
+.ai p{color:var(--body);font-size:17px;margin-top:14px}
+.ai-tasks{display:grid;gap:10px}
+.ai-t{background:#fff;border:1px solid #d6e4fb;border-radius:14px;padding:13px 16px;display:flex;align-items:center;gap:12px;font-size:14.5px;font-weight:600}
+.ai-t .ti{width:32px;height:32px;border-radius:10px;background:var(--tint);color:var(--brand);display:grid;place-items:center;flex:none}
+.ai-t .ti svg{width:16px;height:16px}
+.ai-t .bar{margin-left:auto;width:70px;height:6px;border-radius:6px;background:#e6edf8;overflow:hidden}
+.ai-t .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--accent));border-radius:6px}
+
+/* faq */
+.faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
+.q{border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden;transition:border-color .2s}
+.q.open{border-color:rgba(59,130,246,.45)}
+.q button{width:100%;text-align:left;padding:20px 22px;display:flex;align-items:center;gap:16px;font-weight:700;font-size:16.5px}
+.q button svg{width:18px;height:18px;margin-left:auto;flex:none;color:var(--accent);transition:transform .3s}
+.q.open button svg{transform:rotate(45deg)}
+.q .a{height:0;overflow:hidden;transition:height .35s ease}
+.q .a p{padding:0 22px 20px;color:var(--body);font-size:15.5px}
+
+/* cta */
+.cta{padding:0 0 110px}
+.cta-box{position:relative;border-radius:30px;padding:72px 56px;background:linear-gradient(135deg,var(--navy-900),var(--navy-600));color:#fff;overflow:hidden;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.cta-box::before{content:"";position:absolute;left:-120px;top:-160px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.4),transparent 70%)}
+.cta-box>*{position:relative}
+.cta-box h2{font-size:clamp(30px,4vw,46px);font-weight:800}
+.cta-box p{color:#c8d7ee;font-size:18px;margin-top:16px}
+.cta-box .hero-ctas{justify-content:flex-start;margin-top:30px}
+.form{background:#fff;border-radius:20px;padding:28px;color:var(--ink);box-shadow:0 30px 70px rgba(0,0,0,.25)}
+.form h3{font-size:19px;font-weight:800}
+.form>p{font-size:14px;color:var(--muted);margin:4px 0 18px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fld{margin-bottom:12px}
+.fld label{display:block;font-size:12.5px;font-weight:700;margin-bottom:6px;color:#334155}
+.fld input,.fld select{width:100%;height:46px;border:1px solid var(--line);border-radius:11px;padding:0 14px;font:inherit;font-size:15px;color:var(--ink);background:#f8fafc;outline:none;transition:.2s}
+.fld input:focus,.fld select:focus{border-color:var(--accent);background:#fff;box-shadow:0 0 0 4px rgba(59,130,246,.12)}
+.form .btn{width:100%;justify-content:center;margin-top:6px}
+.form .ok{display:none;font-size:14px;color:var(--brand);font-weight:600;margin-top:12px;text-align:center}
+
+/* footer */
+footer{background:var(--navy-900);color:#9fb3d3;padding:64px 0 34px;font-size:14.5px}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+footer .logo b{color:#fff}
+footer .logo small{color:#6f88ad}
+footer p.ab{margin-top:18px;max-width:320px;line-height:1.6}
+footer h4{color:#fff;font-size:14px;margin-bottom:14px}
+footer ul{list-style:none;display:grid;gap:9px}
+footer a:hover{color:#fff}
+.fbot{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#6f88ad}
+
+/* ---- added sections ---- */
+.nav-links{gap:24px}
+.dd-nav{position:relative}
+.dd-nav>a{display:flex;align-items:center;gap:5px}
+.dd-nav>a svg{width:12px;height:12px}
+.dd-menu{position:absolute;top:100%;left:-16px;padding-top:14px;opacity:0;visibility:hidden;transform:translateY(6px);transition:.2s}
+.dd-nav:hover .dd-menu,.dd-nav:focus-within .dd-menu{opacity:1;visibility:visible;transform:none}
+.dd-menu div{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-lg);padding:8px;min-width:250px;display:grid}
+.dd-menu a{padding:9px 12px;border-radius:9px;font-size:14px;color:var(--ink);font-weight:600}
+.dd-menu a:hover{background:var(--tint);color:var(--brand)}
+.dd-menu small{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:8px 12px 4px;font-weight:700}
+.mmenu small{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:10px 14px 2px;font-weight:700}
+.logos{padding:30px 0 34px;background:#fff;overflow:hidden}
+.logos p{text-align:center;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.track{display:flex;gap:56px;width:max-content;animation:scroll 38s linear infinite}
+.track span{font-size:20px;font-weight:800;color:#9aa8bd;white-space:nowrap;letter-spacing:-.02em}
+.logos .mask{mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split.flip .sp-img{order:2}
+.sp-img{border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3.3;background:var(--tint)}
+.sp-img img{width:100%;height:100%;object-fit:cover}
+.sp-txt h2{font-size:clamp(30px,4vw,42px);font-weight:800}
+.sp-txt p{font-size:17px;color:var(--body);margin-top:16px}
+.sp-txt .btn{margin-top:28px}
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+.svc div{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;font-weight:600;color:var(--ink)}
+.svc svg{width:18px;height:18px;color:var(--accent);flex:none;margin-top:2px}
+.revs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:16px}
+.rev .stars{color:#f5a524;letter-spacing:2px;font-size:15px}
+.rev blockquote{font-size:15px;color:var(--body);flex:1}
+.rev .by{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:14px}
+.rev .by img{width:42px;height:42px;border-radius:50%;object-fit:cover;background:var(--tint)}
+.rev .by b{display:block;font-size:14.5px}
+.rev .by span{font-size:12.5px;color:var(--muted)}
+.rev-foot{text-align:center;margin-top:30px}
+.svc3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sc{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff;transition:box-shadow .25s}
+.sc:hover{box-shadow:0 20px 44px rgba(11,31,58,.12)}
+.sc .im{aspect-ratio:16/10;overflow:hidden;background:var(--tint)}
+.sc .im img{width:100%;height:100%;object-fit:cover}
+.sc .bd{padding:24px}
+.sc h3{font-size:19px;font-weight:700}
+.sc p{font-size:15px;color:var(--body);margin:8px 0 14px}
+.lnk{font-weight:700;font-size:14.5px;color:var(--accent);display:inline-flex;gap:6px;align-items:center}
+.lnk:hover{gap:10px}
+.lnk svg{width:16px;height:16px;flex:none}
+[hidden]{display:none!important}
+.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.doc{border:1px solid var(--line);border-radius:16px;padding:22px;background:#fff;display:flex;flex-direction:column;gap:8px;transition:border-color .2s}
+.doc:hover{border-color:rgba(59,130,246,.5)}
+.doc .di{width:38px;height:38px;border-radius:11px;background:var(--tint);color:var(--brand);display:grid;place-items:center}
+.doc .di svg{width:18px;height:18px}
+.doc h3{font-size:16px;font-weight:700;margin-top:6px}
+.doc p{font-size:14px;color:var(--body);flex:1}
+.doc .lnk{margin-top:6px}
+.sec-foot{text-align:center;margin-top:36px}
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tool{border:1px solid rgba(255,255,255,.12);border-radius:var(--r);overflow:hidden;background:rgba(255,255,255,.05)}
+.tool .im{aspect-ratio:16/10;background:#16325a;overflow:hidden}
+.tool .im img{width:100%;height:100%;object-fit:cover}
+.tool .bd{padding:20px}
+.tool .cat{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-soft)}
+.tool h3{font-size:18px;margin:6px 0 8px;color:#fff}
+.tool p{font-size:14px;color:#b7c8e4}
+.tool .lnk{color:#9fc2ff;margin-top:12px}
+.arts{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.art{display:flex;flex-direction:column;gap:12px}
+.art .im{aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--tint)}
+.art .im img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.art:hover .im img{transform:scale(1.05)}
+.art .meta{font-size:12.5px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap}
+.art .meta b{color:var(--accent);font-weight:700}
+.art h3{font-size:17px;font-weight:700;line-height:1.3}
+.art p{font-size:14px;color:var(--body)}
+.start{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.start a{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 14px;font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:8px}
+.start a:hover{background:rgba(255,255,255,.14)}
+.start svg{width:16px;height:16px;color:var(--accent-soft);flex:none}
+.fgrid{grid-template-columns:1.5fr repeat(5,1fr);gap:30px}
+.social{display:flex;gap:10px;margin-top:20px}
+.social a{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.07);display:grid;place-items:center}
+.social a:hover{background:var(--accent);color:#fff}
+.social svg{width:17px;height:17px}
+.legal{display:flex;gap:16px;flex-wrap:wrap}
+.credit{width:100%;text-align:center;margin-top:14px;font-size:12.5px;color:#6f88ad;display:flex;justify-content:center;align-items:center;gap:6px}
+.credit b{color:#c2d2ea;letter-spacing:.14em;font-weight:800}
+.play{width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center}
+.play svg{width:10px;height:10px}
+@media (max-width:1080px){
+  .revs,.tools,.arts{grid-template-columns:repeat(2,1fr)}
+  .fgrid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:900px){
+  .split,.svc3,.docs{grid-template-columns:1fr}
+  .split{gap:40px}
+  .split.flip .sp-img{order:0}
+  .start{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .revs,.tools,.arts,.svc{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){.track{animation:none}}
+
+.gx{position:relative}
+.gx-card{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-lg);padding:22px;display:grid;gap:10px}
+.gx-h{display:flex;align-items:center;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.gx-h b{display:block;font-size:17px}.gx-h small{font-size:12.5px;color:var(--muted)}.gx-h .chip{margin-left:auto}
+.gx-row{display:flex;align-items:center;gap:12px;font-size:14.5px;font-weight:600;padding:9px 12px;border-radius:12px;background:var(--bg)}
+.gx-row i{width:22px;height:22px;border-radius:50%;border:2px solid #d6dde8;display:grid;place-items:center;flex:none}
+.gx-row i svg{width:11px;height:11px}
+.gx-row.done i{background:var(--brand);border-color:var(--brand)}
+.gx-row.cur{background:var(--tint);color:var(--brand)}.gx-row.cur i{border-color:var(--accent);box-shadow:0 0 0 4px rgba(59,130,246,.15)}
+.gx-row em{margin-left:auto;font-style:normal;font-size:12.5px;color:var(--muted);font-weight:500}
+.gx-f{right:-18px;bottom:-24px}
+.gx-tl{display:grid;gap:0;padding:6px 0 0 4px}
+.gx-tl div{position:relative;padding:0 0 22px 34px}
+.gx-tl div::before{content:"";position:absolute;left:7px;top:4px;width:14px;height:14px;border-radius:50%;border:2px solid #d6dde8;background:#fff}
+.gx-tl div::after{content:"";position:absolute;left:15px;top:22px;bottom:-2px;width:2px;background:var(--line)}
+.gx-tl div:last-child::after{display:none}
+.gx-tl .on::before{background:var(--brand);border-color:var(--brand)}
+.gx-tl .on::after{background:var(--brand)}
+.gx-tl .cur::before{border-color:var(--accent);box-shadow:0 0 0 5px rgba(59,130,246,.15)}
+.gx-tl b{display:block;font-size:15.5px}.gx-tl span{font-size:13.5px;color:var(--muted)}
+.gx-team{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gx-team div{background:var(--bg);border-radius:14px;padding:14px;display:grid;gap:2px}
+.gx-team span{width:36px;height:36px;border-radius:11px;color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px;margin-bottom:8px}
+.gx-team b{font-size:14.5px}.gx-team small{font-size:12.5px;color:var(--muted)}
+.gx-note{font-size:13.5px;color:var(--brand);background:var(--tint);border-radius:12px;padding:12px 14px;font-weight:600}
+.gtile{display:grid;place-items:center;background:linear-gradient(135deg,#dbe9ff,#eef4ff);color:var(--brand)}
+.gtile svg{width:64px;height:64px}
+.gtile.dark{background:linear-gradient(135deg,#1a3868,#22467f);color:#9fc2ff}
+.gtile.dark svg{width:52px;height:52px}
+@media (max-width:900px){.gx-f{display:none}}
+@media (max-width:560px){.gx-row em{display:none}}
+@media (min-width:1081px){.fgrid.f4{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+.price-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;align-items:stretch}
+.price{background:linear-gradient(160deg,var(--navy-900),var(--navy-600));color:#fff;border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:20px;box-shadow:var(--shadow-lg)}
+.pr-top b{display:block;font-size:20px}.pr-top span{font-size:14px;color:#b7c8e4}
+.amt{font-size:72px;font-weight:800;letter-spacing:-.04em;line-height:1;display:flex;align-items:flex-start}
+.amt sup{font-size:30px;margin-top:10px;margin-right:2px}
+.amt small{font-size:17px;font-weight:600;color:#b7c8e4;align-self:flex-end;margin:0 0 10px 6px;letter-spacing:0}
+.price ul{list-style:none;display:grid;gap:11px;flex:1}
+.price li{display:flex;gap:10px;font-size:15px;color:#dce6f5}
+.price li svg{width:17px;height:17px;color:var(--accent-soft);flex:none;margin-top:3px}
+.price .btn{justify-content:center;background:#fff;color:var(--navy-700);box-shadow:none}
+.roi{background:var(--bg);border:1px solid var(--line);border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:20px}
+.roi h3{font-size:clamp(24px,3vw,30px);font-weight:800}
+.roi>p{color:var(--body);font-size:16.5px}
+.roi-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.roi-stats div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
+.roi-stats b{display:block;font-size:28px;font-weight:800;color:var(--brand);letter-spacing:-.02em}
+.roi-stats span{font-size:13px;color:var(--muted);line-height:1.4;display:block}
+.roi-flow{display:grid;gap:10px}
+.roi-flow div{display:flex;gap:12px;align-items:center;font-size:15px;font-weight:600}
+.roi-flow i{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-style:normal;font-weight:800;font-size:13px;display:grid;place-items:center;flex:none}
+@media (max-width:900px){.price-grid{grid-template-columns:1fr}}
+@media (max-width:560px){.roi-stats{grid-template-columns:1fr}.price,.roi{padding:26px}}
+/* even boxes */
+.tool,.sc,.art,.doc,.ft,.card,.stage-c,.who,.rev{height:100%}
+.tool,.sc{display:flex;flex-direction:column}
+.tool .bd,.sc .bd{flex:1;display:flex;flex-direction:column}
+.tool .lnk,.sc .lnk{margin-top:auto;padding-top:14px}
+.tool p,.sc p{margin-bottom:0}
+.art{display:flex;flex-direction:column}
+.gx-card{min-height:440px;align-content:start}
+.gx-team{flex:1}
+.hub-col{grid-auto-rows:1fr}
+@media (max-width:900px){.gx-card{min-height:0}}
+/* hero split + photos */
+.hero-split{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative}
+.hero-split .hero-top{text-align:left;margin:0;max-width:none}
+.hero-split .hero-top p.lede{margin-left:0}
+.hero-split .hero-ctas,.hero-split .hero-note{justify-content:flex-start}
+.hero-va{position:relative;border-radius:28px;aspect-ratio:10/11;max-width:100%}
+.hero-va img{width:100%;height:100%;object-fit:cover;border-radius:28px;box-shadow:var(--shadow-lg);background:var(--tint)}
+.va-chip{left:-34px;bottom:46px}
+.va-chip2{right:-20px;top:34px}
+.gxp .gx-photo{height:300px;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);background:var(--tint)}
+.gxp .gx-photo img{width:100%;height:100%;object-fit:cover}
+.gxp .gx-card{min-height:330px;margin:-90px 0 0 48px;position:relative}
+.gxp .gx-f{display:none}
+.sc .im img,.art .im img{display:block}
+@media (max-width:900px){
+  .hero-split{grid-template-columns:1fr;gap:40px}
+  .hero-split .hero-top{text-align:center}
+  .hero-split .hero-top p.lede{margin-left:auto}
+  .hero-split .hero-ctas,.hero-split .hero-note{justify-content:center}
+  .hero-va{max-width:460px;margin:0 auto;width:100%}
+  .hero-va .float{display:flex}
+  .va-chip{left:12px;bottom:16px}.va-chip2{right:12px;top:16px}
+  .gxp .gx-card{margin:-70px 14px 0 14px;min-height:0}
+  .gxp .gx-photo{height:240px}
+}
+/* photo hero */
+.hero{padding:150px 0 70px;background:#fff}
+.hero-bg{position:absolute;inset:0 0 auto 0;height:760px;background-size:cover;background-position:center 30%;z-index:0}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,.62) 45%,rgba(255,255,255,.92) 78%,#fff 100%)}
+.hero .wrap{position:relative;z-index:1}
+.hero-center{text-align:center;max-width:1180px;margin:0 auto;position:relative;padding-top:40px}
+.hero-center h1{font-size:clamp(44px,6.6vw,84px);font-weight:800;letter-spacing:-.035em;line-height:1.05;color:var(--ink)}
+.hero-center h1 .hl{background:linear-gradient(110deg,var(--brand),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-center p.lede{margin:24px auto 0;max-width:640px;color:#22324a;font-weight:500}
+.hero-center .hero-ctas{justify-content:center}
+.va-live{position:relative;display:inline-flex;margin-top:30px;padding:8px 16px 8px 8px;border-radius:999px;gap:12px;text-align:left}
+.va-live img{width:44px;height:44px;border-radius:50%;object-fit:cover;background:var(--tint)}
+.va-live i{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(59,130,246,.2);margin-left:6px}
+.hero-logos{margin-top:56px}
+.hero-logos p{text-align:center;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.hero-logos .track span{font-size:22px;color:#7d8ba1}
+.hero .stage{margin-top:60px}
+/* floating pill nav */
+.nav{top:12px;left:0;right:0;background:none!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.nav-in{height:68px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:999px;box-shadow:0 10px 30px rgba(11,31,58,.10);padding:0 10px 0 14px;max-width:1180px}
+.nav-in .logo{margin-left:4px}
+.nav-cta .btn{border-radius:999px}
+.mmenu.open{top:88px!important}
+@media (max-width:1240px){.nav-in{margin:0 16px}}
+@media (max-width:900px){.hero{padding:120px 0 50px}.hero-bg{height:620px}.hero-center{padding-top:10px}.va-live{display:inline-flex!important}.nav-in{height:60px}}
+/* responsive */
+@media (max-width:1080px){
+  .f1{left:-10px}.f2{right:-10px}
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .hub{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+  .core{max-width:300px;order:-1}
+}
+@media (max-width:900px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:grid}
+  .mmenu.open{display:grid;gap:4px;position:absolute;top:76px;left:12px;right:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:var(--shadow-lg)}
+  .mmenu a{padding:12px 14px;border-radius:10px;font-weight:600}
+  .mmenu a:hover{background:var(--bg)}
+  .mmenu .btn{justify-content:center;margin-top:6px}
+  .sec{padding:80px 0}
+  .hero{padding:130px 0 70px}
+  .app{grid-template-columns:1fr}
+  .side{display:none}
+  .gauges{grid-template-columns:repeat(3,1fr)}
+  .panels{grid-template-columns:1fr}
+  .panels .pn:nth-child(n+2){display:none}
+  .float{display:none}
+  .strip-in{grid-template-columns:repeat(2,1fr)}
+  .cards3,.steps,.flow,.dd,.portals,.story-in,.ai,.cta-box{grid-template-columns:1fr}
+  .steps .line{display:none}
+  .stage-c .arr{right:50%;top:auto;bottom:-14px;transform:translateX(50%) rotate(90deg)}
+  .portals,.story-in{gap:44px}
+  .phones{min-height:0}
+  .ph-float{display:none}
+  .ai,.cta-box{padding:40px 26px}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:0 18px}
+  .feat-grid,.strip-in,.fr{grid-template-columns:1fr}
+  .hero-ctas .btn{width:100%;justify-content:center}
+  .phone{width:280px}
+  .scr{height:560px}
+  .fgrid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo"><div class="mark">A</div><div><b>Akoni Virtual</b><small>VA Command Center</small></div></a>
+    <nav class="nav-links"><div class="dd-nav"><a href="#services">Services<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg></a><div class="dd-menu"><div><a href="#services">Transaction Support</a><a href="#prelisting">Pre-Listing to Closing</a><a href="#features">VA Command Center</a><a href="#other">Website, Digital &amp; Data</a></div></div></div><div class="dd-nav"><a href="#how">For Agents<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg></a><div class="dd-menu"><div><a href="new-agents.html">New Agents</a><a href="#how">How It Works</a><a href="#pipeline">The Pipeline</a><a href="#portals">Agent &amp; Client Portals</a><a href="#teams">Teams &amp; Brokerages</a><a href="#tools">Popular Agent Tools</a></div></div></div><div class="dd-nav"><a href="#documents">Resources<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg></a><div class="dd-menu"><div><a href="documents/index.html">Common Real Estate Documents</a><a href="#insights">Tips &amp; Insights</a><a href="#boundaries">What Your VA Does</a><a href="#team">The Whole Deal Team</a><a href="#faq">FAQ</a></div></div></div><div class="dd-nav"><a href="#story">About<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg></a><div class="dd-menu"><div><a href="#story">Why Akoni Virtual</a><a href="#pricing">Pricing</a><a href="#ai">Akoni AI</a><a href="#book">Book a Call</a><a href="https://opshub-ecru.vercel.app">Sign In</a></div></div></div></nav>
+    <div class="nav-cta">
+      <a class="signin" href="https://opshub-ecru.vercel.app">Sign in</a>
+      <a class="btn btn-primary" href="#book">Get started</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+  <div class="mmenu" id="mmenu">
+    <a href="#services">Services</a><a href="new-agents.html">New Agents</a><a href="#how">How it works</a><a href="#features">Features</a><a href="#portals">Portals</a><a href="#documents">Documents</a><a href="#tools">Tools</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+    <a href="https://opshub-ecru.vercel.app">Sign in</a>
+    <a class="btn btn-primary" href="#book">Get started</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg" style="background-image:url('images/hero-va-team.jpg')"></div>
+  <div class="wrap">
+    <div class="hero-center">
+      <h1 class="h-anim">Less busywork.<br><span class="hl">More closings.</span></h1>
+      <p class="lede h-anim">Akoni Virtual pairs you with a dedicated VA who runs your business in the VA Command Center. Leads, showings, deadlines, disclosures and client updates handled from pre-listing to close.</p>
+      <div class="hero-ctas h-anim">
+        <a class="btn btn-primary" href="#book">Schedule a call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
+      </div>
+      <div class="float va-live h-anim"><img src="images/va-avatar.jpg" alt="Akoni Virtual assistant"><div><b>Your VA is online</b><small>Full-time · $500/month</small></div><i></i></div>
+    </div>
+    <div class="hero-logos h-anim" aria-label="Brokerages"><p>Works with agents at any brokerage, including</p><div class="mask"><div class="track"><span>Keller Williams</span><span>eXp Realty</span><span>Compass</span><span>Coldwell Banker</span><span>Real Brokerage</span><span>Fathom Realty</span><span>Big Block Realty</span><span>Weichert</span><span>Keller Williams</span><span>eXp Realty</span><span>Compass</span><span>Coldwell Banker</span><span>Real Brokerage</span><span>Fathom Realty</span><span>Big Block Realty</span><span>Weichert</span></div></div></div>
+
+    <div class="stage">
+      <div class="browser" id="browser">
+        <div class="bbar"><i></i><i></i><i></i><div class="url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>akonivirtual.com / command-center</div></div>
+        <div class="app">
+          <aside class="side">
+            <div class="lg"><div class="mark">A</div><div><b>Akoni Virtual</b><small>VA Command Center</small></div></div>
+            <div class="it on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</div>
+            <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg>Client Dashboard</div>
+            <div class="lab">My Agents</div>
+            <div class="ag"><i style="background:#3b82f6"></i>John Smith Realty</div>
+            <div class="ag"><i style="background:#7c4dda"></i>Bennett Home Group</div>
+            <div class="ag"><i style="background:#0ea5e9"></i>Coastline Properties</div>
+            <div class="lab">Operations</div>
+            <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Lead Queue<span class="bd">24</span></div>
+            <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Appointments<span class="bd">6</span></div>
+            <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg>Transactions<span class="bd">9</span></div>
+            <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/></svg>Route</div>
+            <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Messages<span class="bd">3</span></div>
+            <div class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>Email</div>
+          </aside>
+          <div class="mainp">
+            <div class="topb">
+              <div class="ws"><div class="av">ALL</div><div><b>All Agents</b><small>Aggregated workspace</small></div></div>
+              <div class="srch">Search leads, clients, transactions…</div>
+              <div class="pb">Run Report</div>
+            </div>
+            <div class="dash">
+              <div class="gauges" id="gauges">
+                <div class="g"><div class="gl">Listings</div><div class="ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#e8ecf3" stroke-width="13"/><circle class="arc" data-p=".62" cx="50" cy="50" r="40" fill="none" stroke="#4a6cf5" stroke-width="13" stroke-linecap="round" transform="rotate(-90 50 50)"/></svg><b>8</b></div></div>
+                <div class="g"><div class="gl">Expiring</div><div class="ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#e8ecf3" stroke-width="13"/><circle class="arc" data-p=".25" cx="50" cy="50" r="40" fill="none" stroke="#4a6cf5" stroke-width="13" stroke-linecap="round" transform="rotate(-90 50 50)"/></svg><b>2</b></div></div>
+                <div class="g"><div class="gl">Transactions</div><div class="ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#e8ecf3" stroke-width="13"/><circle class="arc" data-p=".9" cx="50" cy="50" r="40" fill="none" stroke="#4a6cf5" stroke-width="13" stroke-linecap="round" transform="rotate(-90 50 50)"/></svg><b>9</b></div></div>
+                <div class="g"><div class="gl">Oct Closing</div><div class="ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#e8ecf3" stroke-width="13"/><circle class="arc" data-p=".44" cx="50" cy="50" r="40" fill="none" stroke="#4a6cf5" stroke-width="13" stroke-linecap="round" transform="rotate(-90 50 50)"/></svg><b>4</b></div></div>
+                <div class="g"><div class="gl">YTD Units</div><div class="ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#e8ecf3" stroke-width="13"/><circle class="arc" data-p=".78" cx="50" cy="50" r="40" fill="none" stroke="#4a6cf5" stroke-width="13" stroke-linecap="round" transform="rotate(-90 50 50)"/></svg><b>18</b></div></div>
+                <div class="g"><div class="gl">YTD Volume</div><div class="ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#e8ecf3" stroke-width="13"/><circle class="arc" data-p=".7" cx="50" cy="50" r="40" fill="none" stroke="#4a6cf5" stroke-width="13" stroke-linecap="round" transform="rotate(-90 50 50)"/></svg><b>9.4M</b></div></div>
+              </div>
+              <div class="panels">
+                <div class="pn">
+                  <div class="ph">Lead Queue <em>24</em><span>View all</span></div>
+                  <div class="row"><div class="av">EC</div><div class="m"><div class="t">Emily Carter</div><div class="s">Zillow · Buyer</div></div><span class="chip c-blue">New</span></div>
+                  <div class="row"><div class="av">MN</div><div class="m"><div class="t">Michael Nguyen</div><div class="s">Referral · Seller</div></div><span class="chip c-navy">Appt Set</span></div>
+                  <div class="row"><div class="av">JP</div><div class="m"><div class="t">Jessica Patel</div><div class="s">Open House · Buyer</div></div><span class="chip c-amber">Nurturing</span></div>
+                  <div class="row"><div class="av">DG</div><div class="m"><div class="t">David Garcia</div><div class="s">Website · Buyer</div></div><span class="chip c-blue">New</span></div>
+                </div>
+                <div class="pn">
+                  <div class="ph">Transactions <em>9</em><span>View all</span></div>
+                  <div class="row"><div class="m"><div class="t">412 Oakridge Dr</div><div class="s">Buyer · Closes Oct 30</div></div><span class="chip c-amber">Inspection</span></div>
+                  <div class="row"><div class="m"><div class="t">1820 Willow Creek Ln</div><div class="s">Seller · Closes Nov 4</div></div><span class="chip c-navy">Appraisal</span></div>
+                  <div class="row"><div class="m"><div class="t">77 Harbor View Blvd</div><div class="s">Buyer · Closes Nov 12</div></div><span class="chip c-blue">Clear to Close</span></div>
+                  <div class="row"><div class="m"><div class="t">930 Cedar Point Pl</div><div class="s">Seller · Closes Oct 24</div></div><span class="chip c-red">Docs missing</span></div>
+                </div>
+                <div class="pn">
+                  <div class="ph">Appointments <em>6</em><span>View all</span></div>
+                  <div class="row"><span class="tm">9:30 AM</span><div class="m"><div class="t">Buyer consult</div><div class="s">Emily Carter · Zoom</div></div><span class="chip c-navy">Confirmed</span></div>
+                  <div class="row"><span class="tm">11:00 AM</span><div class="m"><div class="t">Listing appt</div><div class="s">1234 Oak Dr</div></div><span class="chip c-amber">Confirm</span></div>
+                  <div class="row"><span class="tm">2:30 PM</span><div class="m"><div class="t">Showing tour</div><div class="s">4 homes · route set</div></div><span class="chip c-navy">Confirmed</span></div>
+                  <div class="row"><span class="tm">4:30 PM</span><div class="m"><div class="t">Follow-up call</div><div class="s">Jessica Patel</div></div><span class="chip c-blue">Upcoming</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="float f1"><div class="fi" style="background:#eef4ff;color:#2f6ce0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><b>Client updated</b><small>"Inspection is Thursday at 10"</small></div></div>
+      <div class="float f2"><div class="fi" style="background:var(--accent);color:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><div><b>Appraisal ordered</b><small>412 Oakridge Dr · escrow on track</small></div></div>
+      <div class="float f3"><div class="fi" style="background:#fff4de;color:#b06f00"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/></svg></div><div><b>Showing route ready</b><small>4 stops · 38 min drive</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="strip">
+  <div class="wrap strip-in">
+    <div class="st rv"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg></div><div><b>25 years</b><span>in real estate behind every process</span></div></div>
+    <div class="st rv"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div><b>Lead to close</b><span>one VA follows the client the whole way</span></div></div>
+    <div class="st rv"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><div><b>Private by design</b><span>each agent's data stays their own</span></div></div>
+    <div class="st rv"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><div><b>Phone first</b><span>agent and client portals built for mobile</span></div></div>
+  </div>
+</section>
+
+
+<!-- PROBLEM -->
+<section class="sec prob">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">The problem</span>
+      <h2>You got licensed to sell homes, not chase paperwork.</h2>
+      <p>Most agents lose hours every day to follow-ups, scheduling and status updates — the work that keeps deals alive but never closes one.</p>
+    </div>
+    <div class="cards3">
+      <div class="card rv"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11h-6"/></svg></div><h3>Leads go cold</h3><p>New inquiries sit while you're at a showing. By the time you call back, they've talked to someone else.</p></div>
+      <div class="card rv"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Deadlines slip</h3><p>Inspection, appraisal and loan dates are scattered across texts, emails and sticky notes.</p></div>
+      <div class="card rv"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9 9h6M9 13h3"/></svg></div><h3>Clients keep asking</h3><p>"Where are we at?" — every buyer and seller wants an update, and every update comes from you.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WE HANDLE EVERYTHING -->
+<section class="sec" id="services">
+  <div class="wrap split">
+    <div class="gx gxp rv"><div class="gx-photo"><img src="https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=1200&q=80" alt="Team of coworkers smiling around a laptop" loading="lazy"></div><div class="gx-card">
+  <div class="gx-h"><div><b>412 Oakridge Dr</b><small>Buyer file · Closes Oct 30</small></div><span class="chip c-blue">On track</span></div>
+  <div class="gx-row done"><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M20 6 9 17l-5-5"/></svg></i>Purchase agreement signed<em>Oct 2</em></div>
+  <div class="gx-row done"><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M20 6 9 17l-5-5"/></svg></i>Disclosure package sent<em>Oct 4</em></div>
+  <div class="gx-row done"><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M20 6 9 17l-5-5"/></svg></i>Inspection completed<em>Oct 12</em></div>
+  <div class="gx-row cur"><i></i>Contingency removal<em>Due Oct 24</em></div>
+  <div class="gx-row"><i></i>Broker file upload<em>Oct 28</em></div>
+  <div class="gx-row"><i></i>Closing &amp; keys<em>Oct 30</em></div>
+</div><div class="float gx-f"><div class="fi" style="background:var(--accent);color:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/></svg></div><div><b>Reminder set</b><small>Contingency due in 2 days</small></div></div></div>
+    <div class="sp-txt rv">
+      <span class="kicker">Support built for busy agents</span>
+      <h2>We take the busywork.</h2>
+      <p>The admin side of real estate shouldn't eat your day. Your VA keeps every detail moving so your time goes to clients and closings.</p>
+      <div class="svc"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg><a href="#services">VA Assistant support</a></div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg><a href="#services">Listing management</a></div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg><a href="#services">Buyer representation</a></div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg><a href="#services">Deadline &amp; communication management</a></div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg><a href="#book">Compliance review &amp; broker file uploads</a></div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg><a href="#documents">Disclosure packages &amp; signatures</a></div></div>
+      <a class="btn btn-primary" href="#services">See what&#39;s included <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="prelisting" style="padding-top:0">
+  <div class="wrap split flip">
+    <div class="gx gxp rv"><div class="gx-photo"><img src="https://images.unsplash.com/photo-1706808849777-96e0d7be3bb7?auto=format&fit=crop&w=1200&q=80" alt="Modern home with a large front yard" loading="lazy"></div><div class="gx-card">
+  <div class="gx-h"><div><b>Listing lifecycle</b><small>1820 Willow Creek Ln · Seller</small></div><span class="chip c-navy">Week 3</span></div>
+  <div class="gx-tl">
+    <div class="on"><b>Pre-listing</b><span>Packet, photos, seller questionnaire</span></div>
+    <div class="on"><b>MLS entry</b><span>Listing input and showing setup</span></div>
+    <div class="cur"><b>In escrow</b><span>Inspection, appraisal, loan dates</span></div>
+    <div><b>Closed</b><span>File complete and uploaded</span></div>
+  </div>
+</div></div>
+    <div class="sp-txt rv">
+      <span class="kicker">Before the contract</span>
+      <h2>From pre-listing to the closing table.</h2>
+      <p>Most support starts once a deal is in escrow. Ours starts earlier, while you&#39;re still getting the listing ready.</p>
+      <p>Your VA Assistant stays with the deal the whole way, from the pre-listing packet and MLS entry to the final walk-through.</p>
+      <a class="btn btn-ghost" href="#how">Why hire us? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">How it works</span>
+      <h2>A trained VA plus software built for the way you work.</h2>
+      <p>Your VA runs the VA Command Center for you. You stay focused on clients and closings.</p>
+    </div>
+    <div class="steps" id="steps">
+      <div class="line"><i id="stepLine"></i></div>
+      <div class="stp rv"><div class="n">1</div><h3>Onboard</h3><p>A short call to learn your market, your lead sources and how you like to work.</p></div>
+      <div class="stp rv"><div class="n">2</div><h3>We set you up</h3><p>Your pipeline, logins, texting line and calendar go live in the Command Center.</p></div>
+      <div class="stp rv"><div class="n">3</div><h3>Your VA runs it</h3><p>Follow-ups, showings, escrow check-ins and client updates — handled every day.</p></div>
+      <div class="stp rv"><div class="n">4</div><h3>You close</h3><p>See everything from your phone and spend your time where it makes money.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PIPELINE -->
+<section class="sec pipe" id="pipeline">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">The pipeline</span>
+      <h2>Every client, every stage, one record.</h2>
+      <p>From the first inquiry to the day keys change hands, the client's file follows them — notes, showings, documents and dates included.</p>
+    </div>
+    <div class="flow">
+      <div class="stage-c rv"><div class="sn">Stage 1</div><h3>Lead Queue</h3><p>Every new lead captured and worked fast.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Source and priority tracked</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Follow-up dates that remind</li></ul>
+        <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <div class="stage-c rv"><div class="sn">Stage 2</div><h3>Appointments</h3><p>Consults, showings and calls confirmed.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Showing logs and open house notes</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Fastest route between homes</li></ul>
+        <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <div class="stage-c rv"><div class="sn">Stage 3</div><h3>Transactions</h3><p>Escrow followed until it's clear to close.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Inspection, appraisal and loan dates</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Task board for every deal</li></ul>
+        <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <div class="stage-c rv"><div class="sn">Stage 4</div><h3>Closed</h3><p>A clean record of every finished deal.</p>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>YTD units and volume</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Goal tracking on your dashboard</li></ul></div>
+    </div>
+    <div class="drawer-note rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>One slide-out form carries the client through every stage — nothing gets retyped.</div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="sec" id="features">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Inside the Command Center</span>
+      <h2>Everything your business runs on, in one place.</h2>
+      <p>Real tools your VA uses every day — not a slide deck of promises.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="ft rv"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div><h3>Texting &amp; calling</h3><p>Every text and call goes out from your business number, never the VA's.</p></div>
+      <div class="ft rv"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></div><h3>Email</h3><p>Send and receive from your own inbox, with notes and tasks pinned to any message.</p></div>
+      <div class="ft rv"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h3>Calendar</h3><p>Events, daily logs and deal milestones that flag the day before they're due.</p></div>
+      <div class="ft rv"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="11" rx="1"/></svg></div><h3>Task board</h3><p>Every deal on a board — open escrow, inspection, appraisal, final walk.</p></div>
+      <div class="ft rv"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/></svg></div><h3>Route planner</h3><p>Google finds the fastest order between showings, then it's pushed to the client.</p></div>
+      <div class="ft rv"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div><h3>Documents &amp; CDAs</h3><p>Inspections, appraisals and agreements kept with the deal they belong to.</p></div>
+      <div class="ft rv"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg></div><h3>Reports &amp; goals</h3><p>Yearly unit and volume goals with live gauges that show if you're on pace.</p></div>
+      <div class="ft rv"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><h3>Trained VAs</h3><p>Every VA works through our Training Center before they touch your pipeline.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERSHIPS -->
+<section class="sec" id="teams" style="padding-top:0">
+  <div class="wrap split">
+    <div class="gx gxp rv"><div class="gx-photo"><img src="https://images.unsplash.com/photo-1758873269317-51888e824b28?auto=format&fit=crop&w=1200&q=80" alt="Team collaborating around a table in an office" loading="lazy"></div><div class="gx-card">
+  <div class="gx-h"><div><b>Team workspace</b><small>4 agents · 1 dedicated VA</small></div><span class="chip c-blue">Shared support</span></div>
+  <div class="gx-team">
+    <div><span style="background:#3b82f6">JS</span><b>John Smith</b><small>6 active deals</small></div>
+    <div><span style="background:#7c4dda">SB</span><b>Sara Bennett</b><small>5 active deals</small></div>
+    <div><span style="background:#0ea5e9">CP</span><b>Coastline</b><small>4 active deals</small></div>
+    <div><span style="background:#2f5aa0">MR</span><b>Maria Reyes</b><small>3 active deals</small></div>
+  </div>
+  <div class="gx-note">Each agent's pipeline stays private. One VA keeps every file moving.</div>
+</div></div>
+    <div class="sp-txt rv">
+      <span class="kicker">Lasting partnerships</span>
+      <h2>Running a team or brokerage?</h2>
+      <p>From one agent to a whole office, every file gets the same attention from Akoni Virtual.</p>
+      <p>One VA can support a whole team, and each agent's pipeline stays completely separate.</p>
+      <div class="hero-ctas" style="justify-content:flex-start">
+        <a class="btn btn-primary" href="#book">Talk to us about teams <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER SERVICES -->
+<section class="sec" id="other" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">End-to-end solutions</span>
+      <h2>More ways we help.</h2>
+      <p>Support for the parts of your business that live outside the transaction file.</p>
+    </div>
+    <div class="svc3"><div class="sc rv"><div class="im"><img src="https://images.unsplash.com/photo-1678690832311-bb6e361989ca?auto=format&fit=crop&w=900&q=80" alt="Laptop on a wooden desk" loading="lazy"></div><div class="bd"><h3>Website Solutions</h3><p>Questions about your site, connecting your tools, tech problems or SEO? We sort them out.</p><a class="lnk" href="#book">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div><div class="sc rv"><div class="im"><img src="https://images.unsplash.com/photo-1726066012749-f81bf4422d4e?auto=format&fit=crop&w=900&q=80" alt="Phone in hand in front of a laptop" loading="lazy"></div><div class="bd"><h3>Digital Presence</h3><p>Want more people to notice you? We find what your marketing is missing and help fill it in.</p><a class="lnk" href="#book">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div><div class="sc rv"><div class="im"><img src="https://images.unsplash.com/photo-1762558978967-709b17a00415?auto=format&fit=crop&w=900&q=80" alt="Woman working on a spreadsheet" loading="lazy"></div><div class="bd"><h3>Data Processing</h3><p>Typing data into a CRM wears you out. We clean up exports, load your contacts and run your drip campaigns.</p><a class="lnk" href="#book">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></div>
+  </div>
+</section>
+
+<!-- COLLAB -->
+<section class="sec collab" id="team">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">The whole deal team</span>
+      <h2>We keep everyone on the same page.</h2>
+      <p>Your VA is the liaison between every person on the transaction, so nothing waits on a missed call.</p>
+    </div>
+    <div class="hub">
+      <div class="hub-col">
+        <div class="who rv"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div><b>You, the agent</b><span>Daily updates, a clean pipeline and nothing falling through.</span></div></div>
+        <div class="who rv"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div><b>VA Assistants</b><span>We work closely with every VA Assistant on the file on dates, docs and deadlines.</span></div></div>
+        <div class="who rv"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div><div><b>Agents on the other side</b><span>Showing requests, feedback and follow-ups, handled promptly.</span></div></div>
+      </div>
+      <div class="core" id="core">
+        <div class="orb"></div><div class="orb o2"></div><div class="orb o3"></div>
+        <div class="dot" style="top:4%;left:46%"></div><div class="dot" style="bottom:12%;right:8%"></div><div class="dot" style="bottom:16%;left:6%"></div>
+        <div class="ctr"><div><b>A</b><small>Your VA</small></div></div>
+      </div>
+      <div class="hub-col">
+        <div class="who rv"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg></div><div><b>Buyers &amp; sellers</b><span>Their own client portal with progress, dates and showings.</span></div></div>
+        <div class="who rv"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div><div><b>Escrow &amp; title</b><span>Regular check-ins so escrow stays on schedule.</span></div></div>
+        <div class="who rv"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg></div><div><b>Lenders &amp; inspectors</b><span>Appraisals, inspections and loan conditions tracked to the date.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTALS -->
+<section class="sec" id="portals">
+  <div class="wrap portals">
+    <div class="ptxt rv">
+      <span class="kicker">Portals</span>
+      <h2>Your clients always know where things stand.</h2>
+      <p>Everyone gets their own secure login. Agents see only their own pipeline. Clients see only their own transaction.</p>
+      <div class="tabs" id="ptabs"><button class="on" data-v="client">Client portal</button><button data-v="agent">Agent portal</button></div>
+      <ul class="plist" id="plist-client">
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Progress steps</b> — from offer accepted to keys in hand.</span></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Key dates</b> — contingencies and closing day with a countdown.</span></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Showings</b> — homes, times and the route on a map.</span></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Documents &amp; team</b> — one tap to call the lender or escrow.</span></li>
+      </ul>
+      <ul class="plist" id="plist-agent" hidden>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Your pipeline</b> — leads, appointments and deals at a glance.</span></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Goal gauges</b> — units and volume against your yearly goal.</span></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Daily reports</b> — exactly what your VA did, by date.</span></li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Built for your phone</b> — check in between showings.</span></li>
+      </ul>
+    </div>
+    <div class="phones">
+      <div class="phone" id="phone">
+        <div class="scr">
+          <div class="pv" id="pv-client">
+            <div class="cd-hero">
+              <div class="cd-top"><div class="mk">SB</div><div><b style="font-size:12px;display:block">Sara Bennett</b><small>Bennett Home Group</small></div></div>
+              <svg viewBox="0 0 200 120" fill="#fff"><path d="M20 120V62L100 10l80 52v58z"/></svg>
+              <div class="gr">Hi Jordan &amp; Alex — here's your purchase.</div>
+            </div>
+            <div class="cd-body">
+              <div class="cd-card">
+                <div class="cd-addr">412 Oakridge Dr</div>
+                <div class="cd-city">Phoenix, AZ · $625,000 · 3 bd · 2 ba</div>
+                <div class="cd-prog">
+                  <div class="ring"><svg viewBox="0 0 84 84" style="transform:rotate(-90deg)"><circle cx="42" cy="42" r="34" fill="none" stroke="#E3E1DA" stroke-width="9"/><circle id="cdArc" cx="42" cy="42" r="34" fill="none" stroke="#1E4E8C" stroke-width="9" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="213.6"/></svg><b>64%</b></div>
+                  <div><small>Estimated closing</small><strong>Thursday, Oct 30</strong><small style="color:#1E4E8C;font-weight:700">9 days to go</small></div>
+                </div>
+              </div>
+              <div class="cd-now"><i></i><div><small>Where your file is right now</small><b>Appraisal · scheduled Oct 23</b></div></div>
+              <div class="cd-card">
+                <div class="cd-h">Transaction progress</div>
+                <div class="cd-step done"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M20 6 9 17l-5-5"/></svg></span>Offer accepted</div>
+                <div class="cd-step done"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M20 6 9 17l-5-5"/></svg></span>Escrow opened</div>
+                <div class="cd-step done"><span class="d"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M20 6 9 17l-5-5"/></svg></span>Home inspection</div>
+                <div class="cd-step cur"><span class="d"></span><b>Appraisal</b></div>
+                <div class="cd-step up"><span class="d"></span>Loan approval</div>
+                <div class="cd-step up"><span class="d"></span>Closing &amp; keys</div>
+              </div>
+            </div>
+          </div>
+          <div class="pv off" id="pv-agent">
+            <div class="ap-head">
+              <small>Good morning</small><b>Sara Bennett</b>
+              <div class="ap-g"><div><b>14</b><span>Leads</span></div><div><b>5</b><span>Deals</span></div><div><b>3</b><span>Today</span></div></div>
+            </div>
+            <div class="ap-list">
+              <div class="ap-row"><div class="av">EC</div><div><b>Emily Carter</b><span>Buyer consult · 9:30 AM</span></div><span class="chip c-navy">Confirmed</span></div>
+              <div class="ap-row"><div class="av">MN</div><div><b>Michael Nguyen</b><span>Listing appt · 11:00 AM</span></div><span class="chip c-amber">Confirm</span></div>
+              <div class="ap-row"><div class="av">412</div><div><b>412 Oakridge Dr</b><span>Appraisal Oct 23</span></div><span class="chip c-blue">On track</span></div>
+              <div class="ap-row"><div class="av">930</div><div><b>930 Cedar Point Pl</b><span>Waiting on 2 docs</span></div><span class="chip c-red">Action</span></div>
+              <div class="ap-row"><div class="av">JP</div><div><b>Jessica Patel</b><span>Follow-up · 4:30 PM</span></div><span class="chip c-blue">Upcoming</span></div>
+              <div class="ap-row"><div class="av">VA</div><div><b>Daily report</b><span>11 items logged today</span></div><span class="chip c-navy">New</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="float ph-float"><div class="fi" style="background:var(--accent);color:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/></svg></div><div><b>Showings added</b><small>Saturday · 4 homes</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DO / DON'T -->
+<section class="sec" id="boundaries" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Clear boundaries</span>
+      <h2>What your VA does — and doesn't.</h2>
+      <p>Our VAs are liaisons. You stay in control of every contract and every dollar.</p>
+    </div>
+    <div class="dd">
+      <div class="dd-c do rv">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Your VA handles</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Lead follow-up, nurture calls and texts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Setting showings, including through MLS and ShowingTime</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Following the deal and keeping escrow on track</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Updating clients and keeping you informed daily</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Calendar, tasks, documents and reports</li>
+        </ul>
+      </div>
+      <div class="dd-c dont rv">
+        <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>Always stays with you</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg>Writing, negotiating or signing contracts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg>Handling earnest money, wires or any funds</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg>Giving legal or financial advice to clients</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg>Sharing your data with any other agent</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTS -->
+<section class="sec" id="documents" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Get clarification</span>
+      <h2>The forms we handle every day.</h2>
+      <p>The forms your VA handles on every file, explained simply. Tap any one to learn more.</p>
+    </div>
+    <div class="docs"><a class="doc rv" href="documents/proof-of-funds.html"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span><h3>Proof of Funds</h3><p>Proves your buyer has the money to close, using a recent account statement or a note from their bank.</p><span class="lnk">View document <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="doc rv" href="documents/extension-of-time-addendum.html"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span><h3>Extension of Time Addendum</h3><p>Buys more time when a deadline is coming too fast, like a contingency period or the closing date, once both sides agree.</p><span class="lnk">View document <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="doc rv" href="documents/natural-hazard-disclosure-statement.html"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span><h3>Natural Hazard Disclosure</h3><p>Lets buyers know if the property is in a flood, wildfire, earthquake or other state-mapped risk area.</p><span class="lnk">View document <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="doc rv" href="documents/transfer-disclosure-statement.html"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span><h3>Transfer Disclosure Statement</h3><p>The seller's list of everything they know about the home, from past repairs to known problems and neighborhood issues.</p><span class="lnk">View document <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="doc rv" href="documents/form-593.html"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span><h3>California Form 593</h3><p>California's real estate withholding form. Escrow uses it on almost every sale to figure out how much state tax to hold back.</p><span class="lnk">View document <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="doc rv" href="documents/contingency-removal.html"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span><h3>Contingency Removal</h3><p>The form a buyer signs to drop the inspection, appraisal or loan contingency and move the deal closer to closing.</p><span class="lnk">View document <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="doc rv" href="documents/firpta.html"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span><h3>FIRPTA Affidavit</h3><p>The seller says if they count as foreign for U.S. tax rules, which decides if some of their proceeds get held back.</p><span class="lnk">View document <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="doc rv" href="documents/buyer-representation-agreement.html"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span><h3>Buyer Representation Agreement</h3><p>Your written deal with a buyer client: how you&#39;re paid, what you&#39;ll do and how long it lasts.</p><span class="lnk">View document <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a><a class="doc rv" href="documents/addendum.html"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span><h3>Addendum</h3><p>A signed change or add-on to the deal after the contract is already in place.</p><span class="lnk">View document <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+    <div class="sec-foot"><a class="btn btn-ghost" href="documents/index.html">View all documents <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<!-- AI -->
+<section class="sec">
+  <div class="wrap">
+    <div class="ai rv" id="ai">
+      <div>
+        <span class="soon">Coming next · Akoni AI</span>
+        <h2>An AI assistant that works alongside your VA.</h2>
+        <p>We're building AI into the Command Center to take on routine updates around the clock — so your VA can spend more time on the work that needs a person.</p>
+      </div>
+      <div class="ai-tasks">
+        <div class="ai-t"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg></span>CRM updates<span class="bar"><i data-w="82%"></i></span></div>
+        <div class="ai-t"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>Client texting<span class="bar"><i data-w="64%"></i></span></div>
+        <div class="ai-t"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></span>Email replies<span class="bar"><i data-w="48%"></i></span></div>
+        <div class="ai-t"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>Follow-up calls<span class="bar"><i data-w="30%"></i></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section class="sec" id="insights" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Tips &amp; insights</span>
+      <h2>What agents should know right now.</h2>
+    </div>
+    <div class="arts"><div class="art rv"><div class="im"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80" alt="Analytics charts on a laptop screen" loading="lazy"></div><div class="meta"><b>Website tips</b></div><h3>Google's spam updates and agent websites</h3><p>Templated neighborhood pages that only swap the city name are what Google's scaled-content rules target. Write fewer local pages, and fill each one with things only someone who works that area would know.</p></div><div class="art rv"><div class="im"><img src="https://images.unsplash.com/photo-1722487631997-cf1e0f92c2c4?auto=format&fit=crop&w=900&q=80" alt="Hand holding a bunch of keys" loading="lazy"></div><div class="meta"><b>Software</b></div><h3>Running two CRMs without losing referrals</h3><p>Many agents use a brokerage platform plus their own CRM. When the two never sync, referrals fall through the gap. Clean your contacts first, sync a small test group, then connect the rest.</p></div><div class="art rv"><div class="im"><img src="https://images.unsplash.com/photo-1746517757473-7c88850e539b?auto=format&fit=crop&w=900&q=80" alt="Bright modern living room" loading="lazy"></div><div class="meta"><b>Marketing</b></div><h3>The quiet wealthy second-home buyer</h3><p>Local business owners like car dealers, dentists and restaurant groups hold huge wealth and buy quietly, often with cash. They want numbers, privacy and a clean file, not glossy copy.</p></div><div class="art rv"><div class="im"><img src="https://images.unsplash.com/photo-1743487014165-c26c868b8186?auto=format&fit=crop&w=900&q=80" alt="Hand holding house keys" loading="lazy"></div><div class="meta"><b>Transaction support</b></div><h3>Breaking the 9-deal ceiling</h3><p>On their own, most agents top out around nine deals a year, while teams do several times that. It comes down to time, not skill. Hand off deadlines, disclosures, document chasing and escrow follow-up to free up selling hours.</p></div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">FAQ</span>
+      <h2>Questions agents ask us.</h2>
+    </div>
+    <div class="faq"><div class="q rv"><button>How much does a VA cost?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><p>$500 a month for a full-time dedicated VA, with the VA Command Center and portals included. An agent with a full-time VA should be closing at least 2 to 3 deals a month, and the time your VA saves you is time to close more.</p></div></div><div class="q rv"><button>What transaction work does my VA handle?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><p>Your VA follows the file from pre-listing to close: deadlines, disclosure packages, signatures and escrow and title check-ins, working alongside your broker on compliance. <a class="lnk" href="#faq">Learn more</a></p></div></div><div class="q rv"><button>I already have a VA Assistant. Can you still help?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><p>Yes. Your Akoni VA Assistant can work alongside your current one, taking lead follow-up, showings, listing prep and client updates so they can focus on the file. <a class="lnk" href="#faq">Here's how</a></p></div></div><div class="q rv"><button>What areas do you cover?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><p>Agents and teams anywhere in the U.S. can work with us. Your VA learns your market and your state's forms during onboarding. <a class="lnk" href="#faq">Areas we cover</a></p></div></div>
+      <div class="q rv"><button>Do I have to change my CRM?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><p>No. Your VA works inside the VA Command Center, and we'll talk through how it fits alongside the tools you already use on your onboarding call.</p></div></div>
+      <div class="q rv"><button>Will my clients know they're talking to a VA?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><p>Texts and calls go out from your dedicated business number, so clients always see your line. Your VA introduces themselves as part of your team.</p></div></div>
+      <div class="q rv"><button>Is my data shared with other agents?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><p>Never. One VA may support several agents, but each agent's leads, deals and clients are kept completely separate. You only ever see your own pipeline.</p></div></div>
+      <div class="q rv"><button>Does the VA handle contracts or money?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><p>No. Our VAs are liaisons only. They follow the deal, coordinate with escrow, title and lenders, and keep everyone updated — contracts and funds always stay with you.</p></div></div>
+      <div class="q rv"><button>Do you work with my VA Assistant?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><p>Yes. We work closely with VA Assistants, agents on the other side, escrow and lenders so dates and documents never wait on a missed call.</p></div></div>
+      <div class="q rv"><button>Can I check in from my phone?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="a"><p>Yes. The agent portal and client portal are built for phones first, so you can see your pipeline between showings.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="sec" id="pricing" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Pricing</span>
+      <h2>A full-time VA for $500 a month.</h2>
+      <p>One simple monthly price. No hiring, no payroll, no training. Your VA starts working your pipeline right away.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price rv">
+        <div class="pr-top"><b>Full-Time VA</b><span>Everything included</span></div>
+        <div class="amt"><sup>$</sup>500<small>/month</small></div>
+        <ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Full-time dedicated VA, 40 hours a week</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Lead follow-up, nurture calls and texts</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Showings set, confirmed and routed</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Escrow, inspection and appraisal dates tracked</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Daily client updates and daily reports to you</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Full access to the VA Command Center and portals</li></ul>
+        <a class="btn btn-primary" href="#book">Get my VA <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="roi rv">
+        <h3>The math works on your first deal.</h3>
+        <p>An agent with a full-time VA should be closing at least 2 to 3 deals a month. One closing more than covers the cost, and every hour your VA takes off your plate is an hour you can spend getting the next deal.</p>
+        <div class="roi-stats">
+          <div><b>$500</b><span>per month for your VA</span></div>
+          <div><b>2–3</b><span>deals a month to aim for</span></div>
+          <div><b>40 hrs</b><span>a week of work off your plate</span></div>
+        </div>
+        <div class="roi-flow">
+          <div><i>1</i><span>Your VA handles follow-ups, showings, escrow and updates</span></div>
+          <div><i>2</i><span>You get your days back for clients and listing appointments</span></div>
+          <div><i>3</i><span>That freed-up time turns into more deals closed</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="book">
+  <div class="wrap">
+    <div class="cta-box rv">
+      <div>
+        <h2>Get your time back this month.</h2>
+        <p>Book a discovery call. We'll look at your pipeline and show you exactly what our VA Assistant team would take off your plate.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-white" href="#book">Book a call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="https://opshub-ecru.vercel.app">Already a client? Sign in</a>
+        </div>
+               </div>
+      <form class="form" id="bookForm">
+        <h3>Book a call</h3>
+        <p>We'll reply within one business day.</p>
+        <div class="fr">
+          <div class="fld"><label for="fn">Name</label><input id="fn" required placeholder="Your name"></div>
+          <div class="fld"><label for="fp">Phone</label><input id="fp" type="tel" placeholder="(555) 123-4567"></div>
+        </div>
+        <div class="fld"><label for="fe">Email</label><input id="fe" type="email" required placeholder="you@brokerage.com"></div>
+        <div class="fld"><label for="fs">Deals per year</label><select id="fs"><option>1–10</option><option>11–25</option><option>26–50</option><option>50+</option><option>Team / brokerage</option></select></div>
+        <button class="btn btn-primary" type="submit">Request my call</button>
+        <div class="ok" id="fok">Thanks — your email app is opening with the details.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid f4">
+      <div>
+        <a href="#top" class="logo"><div class="mark">A</div><div><b>Akoni Virtual</b><small>VA Command Center</small></div></a>
+        <p class="ab">Full-time VAs plus the VA Command Center, made for agents who want more time to sell.</p>
+        <p class="ab" style="margin-top:12px">Email: <a href="mailto:hello@akonivirtual.com">hello@akonivirtual.com</a></p>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="#services">What we handle</a></li><li><a href="#features">VA Command Center</a></li><li><a href="#other">Website &amp; data</a></li><li><a href="#portals">Portals</a></li></ul></div>
+      <div><h4>Resources</h4><ul><li><a href="new-agents.html">New agents</a></li><li><a href="#how">How it works</a></li><li><a href="documents/index.html">Documents</a></li><li><a href="#tools">Agent tools</a></li><li><a href="#insights">Insights</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Account</h4><ul><li><a href="#pricing">Pricing</a></li><li><a href="#book">Book a call</a></li><li><a href="https://opshub-ecru.vercel.app">Agent sign in</a></li><li><a href="https://opshub-ecru.vercel.app">Client sign in</a></li></ul></div>
+    </div>
+    <div class="fbot"><span>© <span id="yr">2026</span> Akoni Virtual. All rights reserved.</span><span>akonivirtual.com</span></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+/* Where "Book a call" requests go — change this to your real inbox */
+const BOOK_EMAIL = 'hello@akonivirtual.com';
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* nav */
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', scrollY > 10);
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+const mm = document.getElementById('mmenu');
+document.getElementById('burger').onclick = () => mm.classList.toggle('open');
+mm.querySelectorAll('a').forEach(a => a.onclick = () => mm.classList.remove('open'));
+
+/* FAQ */
+document.querySelectorAll('.q button').forEach(b => b.addEventListener('click', () => {
+  const q = b.parentElement, a = q.querySelector('.a'), open = q.classList.toggle('open');
+  a.style.height = open ? a.scrollHeight + 'px' : '0';
+}));
+
+/* portal tabs */
+const tabs = document.querySelectorAll('#ptabs button');
+tabs.forEach(t => t.onclick = () => {
+  tabs.forEach(x => x.classList.toggle('on', x === t));
+  const v = t.dataset.v;
+  document.getElementById('pv-client').classList.toggle('off', v !== 'client');
+  document.getElementById('pv-agent').classList.toggle('off', v !== 'agent');
+  document.getElementById('plist-client').hidden = v !== 'client';
+  document.getElementById('plist-agent').hidden = v !== 'agent';
+});
+
+/* book a call -> opens the visitor's email app */
+document.getElementById('bookForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  const body = `Name: ${v('fn')}\nPhone: ${v('fp')}\nEmail: ${v('fe')}\nDeals per year: ${v('fs')}`;
+  location.href = `mailto:${BOOK_EMAIL}?subject=${encodeURIComponent('Book a call — ' + v('fn'))}&body=${encodeURIComponent(body)}`;
+  document.getElementById('fok').style.display = 'block';
+});
+
+/* ring + bar helpers (work with or without GSAP) */
+const C = 2 * Math.PI * 40;
+const arcs = document.querySelectorAll('.arc');
+arcs.forEach(a => { a.style.strokeDasharray = C; a.style.strokeDashoffset = C; });
+const fillRings = () => arcs.forEach(a => { a.style.transition = 'stroke-dashoffset 1.4s cubic-bezier(.22,.8,.3,1)'; a.style.strokeDashoffset = C * (1 - (+a.dataset.p)); });
+const fillCd = () => { const c = document.getElementById('cdArc'); c.style.transition = 'stroke-dashoffset 1.4s ease'; c.style.strokeDashoffset = 213.6 * (1 - .64); };
+const fillBars = () => document.querySelectorAll('.ai-t .bar i').forEach((b,i) => { b.style.transition = `width 1.2s ease ${i*.12}s`; b.style.width = b.dataset.w; });
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (window.gsap && window.ScrollTrigger && !reduce) {
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* hero */
+  const tl = gsap.timeline({defaults:{ease:'power3.out'}});
+  if (location.hash) tl.progress(1);
+  tl.from('.h-anim', {y:20, opacity:0, duration:.5, stagger:.06})
+    .from('#browser', {y:80, rotateX:14, opacity:0, duration:1.3, ease:'power4.out', onStart:() => setTimeout(fillRings, 450)}, '-=.5')
+    .from('.float', {y:20, opacity:0, scale:.94, duration:.6, stagger:.15}, '-=.6');
+
+  gsap.to('.f1', {y:-10, duration:3, repeat:-1, yoyo:true, ease:'sine.inOut'});
+  gsap.to('.f2', {y:10, duration:3.4, repeat:-1, yoyo:true, ease:'sine.inOut'});
+  gsap.to('.f3', {y:-8, duration:2.8, repeat:-1, yoyo:true, ease:'sine.inOut'});
+  gsap.to('#browser', {yPercent:-4, ease:'none', scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:true}});
+
+  /* section reveals */
+  ScrollTrigger.batch('.rv', {
+    start:'top 88%',
+    onEnter: els => gsap.from(els, {y:18, duration:.5, stagger:.05, ease:'power2.out', overwrite:true, clearProps:'transform'}),
+    once:true
+  });
+
+  /* step line draws */
+  gsap.from('#stepLine', {scaleX:0, ease:'none', scrollTrigger:{trigger:'#steps', start:'top 75%', end:'bottom 60%', scrub:true}});
+
+  /* hub */
+  gsap.to('.core .orb:first-child', {rotate:360, duration:60, repeat:-1, ease:'none'});
+  gsap.from('.core .ctr', {scale:.85, duration:.6, ease:'back.out(1.6)', clearProps:'transform', scrollTrigger:{trigger:'#core', start:'top 80%'}});
+
+  /* phone */
+  ScrollTrigger.create({trigger:'#phone', start:'top 85%', once:true, onEnter:() => setTimeout(fillCd, 300)});
+  gsap.to('#phone', {y:-30, ease:'none', scrollTrigger:{trigger:'#portals', start:'top bottom', end:'bottom top', scrub:true}});
+  gsap.to('.ph-float', {y:-12, duration:3, repeat:-1, yoyo:true, ease:'sine.inOut'});
+
+  /* years counter */
+  const yc = {v:0};
+  ScrollTrigger.create({trigger:'#yrs', start:'top 80%', once:true, onEnter:() =>
+    gsap.to(yc, {v:25, duration:1.6, ease:'power2.out', onUpdate:() => document.getElementById('yrCount').textContent = Math.round(yc.v)})});
+
+  /* AI bars */
+  ScrollTrigger.create({trigger:'#ai', start:'top 75%', once:true, onEnter:fillBars});
+} else {
+  fillRings(); fillCd(); fillBars();
+}
+</script>
+</body>
+</html>
