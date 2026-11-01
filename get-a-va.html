@@ -826,7 +826,15 @@ footer a:hover{color:#fff}
           <div class="fld"><label for="fp">Phone</label><input id="fp" type="tel" placeholder="(555) 123-4567"></div>
         </div>
         <div class="fld"><label for="fe">Email</label><input id="fe" type="email" required placeholder="you@brokerage.com"></div>
-        <div class="fld"><label for="fs">Deals per year</label><select id="fs"><option>1–10</option><option>11–25</option><option>26–50</option><option>50+</option><option>Team / brokerage</option></select></div>
+        <div class="fld"><label for="fb">Brokerage</label><input id="fb" required placeholder="e.g. Keller Williams, eXp, Real"></div>
+        <div class="fr">
+          <div class="fld"><label for="fst">State</label><input id="fst" required placeholder="e.g. California"></div>
+          <div class="fld"><label for="fc">City</label><input id="fc" required placeholder="e.g. Bakersfield"></div>
+        </div>
+        <div class="fr">
+          <div class="fld"><label for="fs">Deals per year</label><select id="fs"><option>1–10</option><option>11–25</option><option>26–50</option><option>50+</option><option>Team / brokerage</option></select></div>
+          <div class="fld"><label for="fw">When do you want to start?</label><select id="fw"><option>Right away</option><option>Within 2 weeks</option><option>Within 30 days</option><option>In 1–3 months</option><option>Just researching</option></select></div>
+        </div>
         <button class="btn btn-primary" type="submit">Get my $500 VA</button>
         <div class="ok" id="fok">Thanks — your email app is opening with the details.</div>
       </form>
@@ -867,7 +875,7 @@ function calc(){
 document.querySelectorAll('.q button').forEach(b=>b.addEventListener('click',()=>b.parentElement.classList.toggle('open')));
 const BOOK_EMAIL='akonivirtual@gmail.com';
 $('bookForm').addEventListener('submit',e=>{e.preventDefault();const v=id=>$(id).value.trim();
-  const body=`Name: ${v('fn')}\nPhone: ${v('fp')}\nEmail: ${v('fe')}\nDeals per year: ${v('fs')}\n\nI'd like the $500/month full-time VA.`;
+  const body=`Name: ${v('fn')}\nPhone: ${v('fp')}\nEmail: ${v('fe')}\nBrokerage: ${v('fb')}\nCity: ${v('fc')}\nState: ${v('fst')}\nDeals per year: ${v('fs')}\nWants to start: ${v('fw')}\n\nI'd like the $500/month full-time VA.`;
   $('fok').classList.add('show');
   location.href=`mailto:${BOOK_EMAIL}?subject=${encodeURIComponent('$500 VA — '+v('fn'))}&body=${encodeURIComponent(body)}`;});
 </script>
