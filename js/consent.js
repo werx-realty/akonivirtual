@@ -38,6 +38,12 @@
   function clearGa() {
     document.cookie.split(';').forEach(function (c) { var n = c.split('=')[0].trim(); if (/^_ga/.test(n)) { var h = location.hostname.replace(/^www\./, ''); ['', ';domain=' + h, ';domain=.' + h].forEach(function (d) { document.cookie = n + '=;max-age=0;path=/' + d; }); } });
   }
+  /* Vercel Web Analytics: cookieless, no personal profiles. Skipped when the browser sends Global Privacy Control. */
+  if (!gpc && !window.va) {
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    var vs = document.createElement('script'); vs.defer = true; vs.src = '/_vercel/insights/script.js';
+    (document.head || document.documentElement).appendChild(vs);
+  }
   var state = read();
   if (!state && gpc) state = write(false, false);
   if (state && state.analytics) loadGa();
