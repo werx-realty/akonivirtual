@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agreements Desk | Akoni Virtual</title>
+<meta name="description" content="Akoni Virtual internal page for reviewing and countersigning VA services agreements.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0d14;--ink:#151b27;--body:#3b4456;--muted:#6b7588;--silver:#d5dae3;--silver-2:#eef0f4;--desk:#f3f5f9;--blue:#1f6bff;--blue-tint:#e8f0ff;--warn:#a15c00;--warn-bg:#fff6e6;--danger:#c62828;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--desk);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.mast{background:var(--black);border-bottom:3px solid var(--blue)}
+.mast div{max-width:1180px;margin:0 auto;padding:16px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:14px;color:#fff}
+.mast img{height:40px}.mast b{letter-spacing:.14em;font-size:14px}.mast span{color:#a9b2c3;font-size:13px}
+.mast button{margin-left:auto}
+.wrap{max-width:1180px;margin:0 auto;padding:26px max(16px,env(safe-area-inset-right,0px)) 60px max(16px,env(safe-area-inset-left,0px))}
+.card{background:#fff;border:1px solid var(--silver);border-radius:16px;padding:24px}
+h1{font-size:24px;font-weight:800;margin-bottom:6px}
+.sub{color:var(--body);font-size:14.5px}
+input{font:inherit;font-size:15px;border:1.5px solid var(--silver);border-radius:10px;padding:11px 13px;min-height:46px;width:100%}
+input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(31,107,255,.14)}
+label{font-size:13px;font-weight:700;display:block;margin-bottom:6px}
+.btn{font:inherit;font-weight:700;font-size:14px;border:none;border-radius:10px;min-height:42px;padding:0 16px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.btn-p{background:var(--blue);color:#fff}.btn-g{background:#fff;border:1.5px solid var(--silver);color:var(--ink)}
+.btn-d{background:none;color:#c9d0dc;border:1px solid #2b3240}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.login{max-width:420px;margin:40px auto;display:grid;gap:14px}
+.warn{background:var(--warn-bg);border:1px solid #f1d39b;color:var(--warn);border-radius:12px;padding:12px 16px;font-size:13.5px;margin-bottom:16px;line-height:1.5}
+.tablewrap{overflow-x:auto;margin-top:16px;border:1px solid var(--silver);border-radius:14px;background:#fff}
+table{width:100%;border-collapse:collapse;min-width:900px;font-size:14px}
+th,td{padding:13px 14px;text-align:left;border-bottom:1px solid var(--silver-2);vertical-align:top}
+th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;background:#fafbfc}
+td small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.chip{display:inline-block;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.c-blue{background:var(--blue-tint);color:#0d4fd6}.c-black{background:var(--black);color:#fff}.c-warn{background:var(--warn-bg);color:var(--warn)}.c-grey{background:var(--silver-2);color:var(--body)}
+.acts{display:flex;gap:8px;flex-wrap:wrap}
+.empty{padding:40px;text-align:center;color:var(--muted)}
+dialog{border:none;border-radius:18px;padding:0;width:min(560px,calc(100vw - 32px));box-shadow:0 30px 80px rgba(0,0,0,.3)}
+dialog::backdrop{background:rgba(10,13,20,.55)}
+.dlg-h{background:var(--black);color:#fff;padding:16px 22px;border-bottom:3px solid var(--blue);font-weight:700}
+.dlg-b{padding:22px;display:grid;gap:14px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sigwrap{border:1.5px dashed #b9c1ce;border-radius:12px;position:relative;touch-action:none}
+.sigwrap canvas{display:block;width:100%;height:160px;cursor:crosshair}
+.err{color:var(--danger);font-size:13.5px;font-weight:600;min-height:18px}
+.ok{color:#0d4fd6;font-size:13.5px;font-weight:600}
+[hidden]{display:none!important}
+@media (max-width:600px){.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="mast"><div><img src="images/akoni-icon.png" alt=""><b>AKONI VIRTUAL</b><span>Agreements desk</span><button class="btn btn-d" id="logout" hidden>Sign out</button></div></header>
+<main class="wrap">
+  <div class="card login" id="login">
+    <h1>Sign in</h1>
+    <p class="sub">Enter the admin key saved in Vercel as <b>ADMIN_KEY</b> (Project akonivirtual → Settings → Environment Variables).</p>
+    <div><label for="key">Admin key</label><input id="key" type="password" autocomplete="current-password"></div>
+    <button class="btn btn-p" id="go">Open agreements</button>
+    <p class="err" id="eLogin"></p>
+  </div>
+
+  <section id="desk" hidden>
+    <h1>Agreements</h1>
+    <p class="sub">Countersign agreements after the agent signs. The executed PDF is saved and emailed to both parties automatically.</p>
+    <div id="warns" style="margin-top:16px"></div>
+    <div class="tablewrap"><table><thead><tr><th>Agent</th><th>Term</th><th>Agent signed</th><th>Payment</th><th>Status</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table></div>
+    <p class="ok" id="flash" style="margin-top:12px"></p>
+  </section>
+</main>
+
+<dialog id="dlg">
+  <div class="dlg-h">Countersign for Akoni Virtual</div>
+  <div class="dlg-b">
+    <p class="sub" id="dlgWho"></p>
+    <div class="row">
+      <div><label for="cName">Authorized representative</label><input id="cName" autocomplete="name"></div>
+      <div><label for="cTitle">Title</label><input id="cTitle" placeholder="e.g. Owner"></div>
+    </div>
+    <div><label>Signature</label><div class="sigwrap"><canvas id="sig"></canvas></div></div>
+    <p class="err" id="eDlg"></p>
+    <div class="acts" style="justify-content:space-between"><button class="btn btn-g" id="clr" type="button">Clear</button><span class="acts"><button class="btn btn-g" id="cancel" type="button">Cancel</button><button class="btn btn-p" id="doSign" type="button">Countersign and send</button></span></div>
+  </div>
+</dialog>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+let KEYV = ''; try { KEYV = sessionStorage.getItem('akoni-admin') || ''; } catch {}
+const api = (u, o = {}) => fetch(u, { ...o, headers: { ...(o.headers || {}), 'x-admin-key': KEYV, 'Content-Type': 'application/json' } });
+const fd = iso => iso ? new Date(iso + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '—';
+let data = [];
+
+async function load() {
+  const r = await api('/api/admin/list'); const j = await r.json().catch(() => ({}));
+  if (!r.ok) { $('#eLogin').textContent = j.error || 'Could not sign in.'; $('#login').hidden = false; $('#desk').hidden = true; return; }
+  try { sessionStorage.setItem('akoni-admin', KEYV); } catch {}
+  $('#login').hidden = true; $('#desk').hidden = false; $('#logout').hidden = false;
+  const c = j.config, w = [];
+  if (!c.email) w.push('Email sending is off. Add <b>RESEND_API_KEY</b> in Vercel so signed agreements are emailed automatically.');
+  if (!c.payments) w.push('Payments are off. Add <b>STRIPE_SECRET_KEY</b> in Vercel so agents pay the $300 setup fee and save their card at signing.');
+  if (!c.live) w.push('Agreements are marked <b>PRE-REVIEW DRAFT</b>. After your attorneys approve the contract, set <b>AGREEMENT_LIVE</b> to <b>true</b> in Vercel.');
+  $('#warns').innerHTML = w.map(x => `<div class="warn">${x}</div>`).join('');
+  data = j.agreements;
+  $('#rows').innerHTML = data.length ? data.map(a => {
+    const pay = a.payment?.status === 'paid' ? `<span class="chip c-blue">Paid $${(a.payment.amount / 100).toFixed(0)}</span><small>${a.payment.subscriptionId ? 'Monthly billing set' : 'Monthly billing NOT set'}</small>` : a.payment?.status === 'manual' ? '<span class="chip c-grey">Invoice manually</span>' : '<span class="chip c-warn">Not paid</span>';
+    const st = a.status === 'executed' ? `<span class="chip c-black">Executed</span><small>${esc(a.provider?.name)} · ${esc(a.provider?.signedAtLocal)}</small>` : '<span class="chip c-warn">Needs countersign</span>';
+    return `<tr><td><b>${esc(a.agent.agentName)}</b><small>${esc(a.agent.brokerage)} · ${esc(a.agent.licenseState)} #${esc(a.agent.licenseNumber)}</small><small>${esc(a.agent.email)} · ${esc(a.agent.phone)}</small><small>${esc(a.id)}</small></td>
+      <td>${a.term} months<small>Starts ${fd(a.commencementDate || a.startDate)}</small></td>
+      <td>${esc(a.agentSignedAt)}</td><td>${pay}</td><td>${st}</td>
+      <td><div class="acts"><button class="btn btn-g" data-pdf="${a.id}">PDF</button>${a.status === 'executed' ? `<button class="btn btn-g" data-resend="${a.id}">Re-send</button>` : `<button class="btn btn-p" data-sign="${a.id}">Countersign</button>`}</div></td></tr>`;
+  }).join('') : '<tr><td colspan="6" class="empty">No agreements yet. Share akonivirtual.com/agreement.html with your agents.</td></tr>';
+}
+$('#go').onclick = () => { KEYV = $('#key').value.trim(); $('#eLogin').textContent = ''; load(); };
+$('#key').addEventListener('keydown', e => { if (e.key === 'Enter') $('#go').click(); });
+$('#logout').onclick = () => { try { sessionStorage.removeItem('akoni-admin'); } catch {} location.reload(); };
+if (KEYV) load();
+
+$('#rows').addEventListener('click', async e => {
+  const b = e.target.closest('button'); if (!b) return;
+  if (b.dataset.pdf) {
+    b.disabled = true; const r = await api('/api/admin/pdf?id=' + b.dataset.pdf); b.disabled = false;
+    if (!r.ok) return alertLike('Could not download the PDF.');
+    const url = URL.createObjectURL(await r.blob()); const a = document.createElement('a'); a.href = url; a.download = `Akoni-Virtual-Agreement-${b.dataset.pdf}.pdf`; a.click();
+  }
+  if (b.dataset.resend) {
+    b.disabled = true; const r = await api('/api/admin/countersign', { method: 'POST', body: JSON.stringify({ id: b.dataset.resend, resendOnly: true }) }); const j = await r.json(); b.disabled = false;
+    alertLike(r.ok ? (j.emailedAgent ? 'Executed copy emailed again to both parties.' : 'PDF regenerated, but email failed: ' + (j.emailError || 'not configured')) : j.error);
+  }
+  if (b.dataset.sign) openSign(b.dataset.sign);
+});
+function alertLike(m) { $('#flash').textContent = m; setTimeout(() => $('#flash').textContent = '', 8000); }
+
+// Countersign dialog + signature pad
+const cv = $('#sig'), ctx = cv.getContext('2d'); let draw = false, inked = false, last, current;
+function pad() { const r = cv.getBoundingClientRect(), d = Math.max(1, devicePixelRatio || 1); cv.width = r.width * d; cv.height = r.height * d; ctx.setTransform(d, 0, 0, d, 0, 0); ctx.lineWidth = 2.4; ctx.lineCap = 'round'; ctx.strokeStyle = '#0a0d14'; inked = false; }
+const P = e => { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
+cv.onpointerdown = e => { draw = true; last = P(e); cv.setPointerCapture(e.pointerId); };
+cv.onpointermove = e => { if (!draw) return; const p = P(e); ctx.beginPath(); ctx.moveTo(last.x, last.y); ctx.lineTo(p.x, p.y); ctx.stroke(); last = p; inked = true; };
+cv.onpointerup = cv.onpointercancel = () => draw = false;
+$('#clr').onclick = () => { ctx.clearRect(0, 0, cv.width, cv.height); inked = false; };
+$('#cancel').onclick = () => $('#dlg').close();
+function openSign(id) {
+  current = data.find(a => a.id === id);
+  $('#dlgWho').innerHTML = `Countersigning the ${current.term}-month agreement with <b>${esc(current.agent.agentName)}</b> (${esc(current.agent.brokerage)}).`;
+  try { $('#cName').value = localStorage.getItem('akoni-rep-name') || ''; $('#cTitle').value = localStorage.getItem('akoni-rep-title') || ''; } catch {}
+  $('#eDlg').textContent = ''; $('#dlg').showModal(); requestAnimationFrame(pad);
+}
+$('#doSign').onclick = async () => {
+  const name = $('#cName').value.trim(), title = $('#cTitle').value.trim();
+  if (!name || !title) return $('#eDlg').textContent = 'Enter your name and title.';
+  if (!inked) return $('#eDlg').textContent = 'Draw your signature.';
+  try { localStorage.setItem('akoni-rep-name', name); localStorage.setItem('akoni-rep-title', title); } catch {}
+  const b = $('#doSign'); b.disabled = true; b.textContent = 'Saving…';
+  const r = await api('/api/admin/countersign', { method: 'POST', body: JSON.stringify({ id: current.id, name, title, signature: cv.toDataURL('image/png') }) });
+  const j = await r.json().catch(() => ({})); b.disabled = false; b.textContent = 'Countersign and send';
+  if (!r.ok) return $('#eDlg').textContent = j.error || 'Could not countersign.';
+  $('#dlg').close(); alertLike(j.emailedAgent ? 'Executed and emailed to both parties.' : 'Executed and saved. Email was not sent: ' + (j.emailError || 'email not configured') + '. Download the PDF and send it manually.'); load();
+};
+</script>
+</body>
+</html>

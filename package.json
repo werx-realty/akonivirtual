@@ -1,0 +1,10 @@
+{
+  "name": "akonivirtual",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@vercel/blob": "^2.8.2",
+    "pdf-lib": "^1.17.1"
+  }
+}
