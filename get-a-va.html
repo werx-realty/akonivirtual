@@ -15,9 +15,7 @@
 <meta property="og:image" content="https://akonivirtual.com/images/akoni-logo.png">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="A Full-Time Real Estate VA for $500 a Month"><meta name="twitter:description" content="Get a full-time real estate virtual assistant for $500 a month. Akoni Virtual handles your lead follow-up, showings, escrow deadlines and client updates, 35 hours a week, after a one-week setup.">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","name":"Akoni Virtual","url":"https://akonivirtual.com/","logo":"https://akonivirtual.com/images/akoni-logo.png","email":"akonivirtual@gmail.com","areaServed":{"@type":"Country","name":"United States"}},{"@type":"Service","name":"Full-time real estate virtual assistant","provider":{"@type":"Organization","name":"Akoni Virtual"},"offers":{"@type":"Offer","price":"500","priceCurrency":"USD","url":"https://akonivirtual.com/get-a-va.html","description":"Full-time dedicated VA, 35 hours a week, billed monthly"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it really $500 a month for full time?","acceptedAnswer":{"@type":"Answer","text":"Yes. One flat $500 a month for a full-time VA, 35 hours a week, after a one-time $300 setup fee. Terms are 6 or 12 months."}},{"@type":"Question","name":"What will my VA actually do each day?","acceptedAnswer":{"@type":"Answer","text":"Manage your calendar and inbox, book and confirm showings, keep your CRM up to date, track every escrow date, update clients and send you a daily report of what got done."}},{"@type":"Question","name":"How fast can I get started?","acceptedAnswer":{"@type":"Answer","text":"Book a call, we learn your market and how you work, then your VA gets set up in the VA Command Center with your pipeline, calendar and texting."}},{"@type":"Question","name":"Will my VA handle contracts or money?","acceptedAnswer":{"@type":"Answer","text":"No. Writing and negotiating contracts, handling deposits and giving legal or financial advice always stay with you. Your VA handles the busywork around them."}},{"@type":"Question","name":"Do I need new software?","acceptedAnswer":{"@type":"Answer","text":"No. Your VA works inside the VA Command Center, which is included, and can work alongside the CRM you already use."}},{"@type":"Question","name":"What if it's not working for me?","acceptedAnswer":{"@type":"Answer","text":"Talk to us first and we'll fix it. Agreements are 6 or 12 months, then month-to-month, and the early exit terms are spelled out in plain language before you sign."}}]}]}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{
   --navy-900:#0b1f3a; --navy-800:#11294b; --navy-700:#1a3868; --navy-600:#22467f;
@@ -632,6 +630,10 @@ footer a:hover{color:#fff}
 .foot-logo{display:block;width:230px;max-width:100%;height:auto}
 .btn-signup{background:#0a0d14;color:#fff;border:1.5px solid #0a0d14}.btn-signup:hover{background:#1f6bff;border-color:#1f6bff;color:#fff}
 .f-offer .btn-signup,.cta-box .btn-signup,.price .btn-signup{background:#1f6bff;border-color:#1f6bff}
+
+.flegal{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:20px;font-size:13.5px}
+.flegal a,.flegal button{color:#9fb3d1;background:none;border:0;padding:0;font:inherit;cursor:pointer}
+.flegal a:hover,.flegal button:hover{color:#fff}
 </style>
 <style>
 .f-navcta{margin-left:auto}
@@ -858,6 +860,7 @@ footer a:hover{color:#fff}
       <div><h4>Resources</h4><ul><li><a href="new-agents.html">New agents</a></li><li><a href="index.html#how">How it works</a></li><li><a href="documents/index.html">Documents</a></li><li><a href="index.html#tools">Agent tools</a></li><li><a href="index.html#insights">Insights</a></li><li><a href="index.html#faq">FAQ</a></li></ul></div>
       <div><h4>Account</h4><ul><li><a href="get-a-va.html">Pricing</a></li><li><a href="index.html#book">Book a call</a></li><li><a href="https://opshub-ecru.vercel.app">Agent sign in</a></li><li><a href="https://opshub-ecru.vercel.app">Client sign in</a></li></ul></div>
     </div>
+    <nav class="flegal" aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="refund-policy.html">Refund Policy</a><a href="cookie-policy.html">Cookie Policy</a><button type="button" data-cookie-settings>Cookie settings</button><a href="index.html#book">Contact Us</a></nav>
     <div class="fbot"><span>© <span id="yr">2026</span> Akoni Virtual. All rights reserved.</span><span>akonivirtual.com</span></div>
   </div>
 </footer>
@@ -883,5 +886,6 @@ $('bookForm').addEventListener('submit',e=>{e.preventDefault();const v=id=>$(id)
   $('fok').classList.add('show');
   location.href=`mailto:${BOOK_EMAIL}?subject=${encodeURIComponent('$500 VA — '+v('fn'))}&body=${encodeURIComponent(body)}`;});
 </script>
+<script src="js/consent.js" defer></script>
 </body>
 </html>

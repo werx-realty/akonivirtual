@@ -7,8 +7,7 @@
 <meta name="description" content="Akoni Virtual internal page for reviewing and countersigning VA services agreements.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/png" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{--black:#0a0d14;--ink:#151b27;--body:#3b4456;--muted:#6b7588;--silver:#d5dae3;--silver-2:#eef0f4;--desk:#f3f5f9;--blue:#1f6bff;--blue-tint:#e8f0ff;--warn:#a15c00;--warn-bg:#fff6e6;--danger:#c62828;color-scheme:light}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -153,7 +152,7 @@ $('#doSign').onclick = async () => {
   const name = $('#cName').value.trim(), title = $('#cTitle').value.trim();
   if (!name || !title) return $('#eDlg').textContent = 'Enter your name and title.';
   if (!inked) return $('#eDlg').textContent = 'Draw your signature.';
-  try { localStorage.setItem('akoni-rep-name', name); localStorage.setItem('akoni-rep-title', title); } catch {}
+  if (window.AkoniConsent && AkoniConsent.has('preferences')) try { localStorage.setItem('akoni-rep-name', name); localStorage.setItem('akoni-rep-title', title); } catch {}
   const b = $('#doSign'); b.disabled = true; b.textContent = 'Saving…';
   const r = await api('/api/admin/countersign', { method: 'POST', body: JSON.stringify({ id: current.id, name, title, signature: cv.toDataURL('image/png') }) });
   const j = await r.json().catch(() => ({})); b.disabled = false; b.textContent = 'Countersign and send';
@@ -161,5 +160,6 @@ $('#doSign').onclick = async () => {
   $('#dlg').close(); alertLike(j.emailedAgent ? 'Executed and emailed to both parties.' : 'Executed and saved. Email was not sent: ' + (j.emailError || 'email not configured') + '. Download the PDF and send it manually.'); load();
 };
 </script>
+<script src="js/consent.js" defer></script>
 </body>
 </html>

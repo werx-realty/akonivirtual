@@ -20,9 +20,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Akoni Virtual","url":"https://akonivirtual.com/","logo":"https://akonivirtual.com/images/akoni-logo.png","email":"akonivirtual@gmail.com","description":"Dedicated virtual assistants and the VA Command Center for real estate agents, teams and brokerages.","areaServed":{"@type":"Country","name":"United States"},"offers":{"@type":"Offer","name":"Full-time real estate VA","price":"500","priceCurrency":"USD","description":"Full-time dedicated VA, billed monthly"},"serviceType":["Real estate virtual assistant","Transaction support","Lead follow-up","Showing coordination"]}
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{
   --navy-900:#0b1f3a; --navy-800:#11294b; --navy-700:#1a3868; --navy-600:#22467f;
@@ -637,6 +635,10 @@ footer a:hover{color:#fff}
 .foot-logo{display:block;width:230px;max-width:100%;height:auto}
 .btn-signup{background:#0a0d14;color:#fff;border:1.5px solid #0a0d14}.btn-signup:hover{background:#1f6bff;border-color:#1f6bff;color:#fff}
 .f-offer .btn-signup,.cta-box .btn-signup,.price .btn-signup{background:#1f6bff;border-color:#1f6bff}
+
+.flegal{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:20px;font-size:13.5px}
+.flegal a,.flegal button{color:#9fb3d1;background:none;border:0;padding:0;font:inherit;cursor:pointer}
+.flegal a:hover,.flegal button:hover{color:#fff}
 </style>
 </head>
 <body>
@@ -1185,12 +1187,13 @@ footer a:hover{color:#fff}
       <div><h4>Resources</h4><ul><li><a href="new-agents.html">New agents</a></li><li><a href="#how">How it works</a></li><li><a href="documents/index.html">Documents</a></li><li><a href="#tools">Agent tools</a></li><li><a href="#insights">Insights</a></li><li><a href="#faq">FAQ</a></li></ul></div>
       <div><h4>Account</h4><ul><li><a href="get-a-va.html">$500 VA</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#book">Book a call</a></li><li><a href="https://opshub-ecru.vercel.app">Agent sign in</a></li><li><a href="https://opshub-ecru.vercel.app">Client sign in</a></li></ul></div>
     </div>
+    <nav class="flegal" aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="refund-policy.html">Refund Policy</a><a href="cookie-policy.html">Cookie Policy</a><button type="button" data-cookie-settings>Cookie settings</button><a href="index.html#book">Contact Us</a></nav>
     <div class="fbot"><span>© <span id="yr">2026</span> Akoni Virtual. All rights reserved.</span><span>akonivirtual.com</span></div>
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
 <script>
 /* Where "Book a call" requests go — change this to your real inbox */
 const BOOK_EMAIL = 'akonivirtual@gmail.com';
@@ -1278,7 +1281,7 @@ if (window.gsap && window.ScrollTrigger && !reduce) {
   /* years counter */
   const yc = {v:0};
   ScrollTrigger.create({trigger:'#yrs', start:'top 80%', once:true, onEnter:() =>
-    gsap.to(yc, {v:25, duration:1.6, ease:'power2.out', onUpdate:() => document.getElementById('yrCount').textContent = Math.round(yc.v)})});
+    gsap.to(yc, {v:25, duration:1.6, ease:'power2.out', onUpdate:() => { const el = document.getElementById('yrCount'); if (el) el.textContent = Math.round(yc.v); }})});
 
   /* AI bars */
   ScrollTrigger.create({trigger:'#ai', start:'top 75%', once:true, onEnter:fillBars});
@@ -1286,5 +1289,6 @@ if (window.gsap && window.ScrollTrigger && !reduce) {
   fillRings(); fillCd(); fillBars();
 }
 </script>
+<script src="js/consent.js" defer></script>
 </body>
 </html>

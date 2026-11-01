@@ -13,8 +13,8 @@
 <meta property="og:description" content="Review and sign your Akoni Virtual VA Services Agreement online.">
 <meta property="og:image" content="https://akonivirtual.com/images/akoni-logo.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Akoni Virtual","url":"https://akonivirtual.com/","email":"akonivirtual@gmail.com","logo":"https://akonivirtual.com/images/akoni-logo.png","areaServed":{"@type":"Country","name":"United States"}}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
+<script src="js/consent.js"></script>
 <style>
 /* Contract desk: black masthead, white paper, silver rules, one electric-blue accent */
 :root{
@@ -116,6 +116,7 @@ input:focus,select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 
   .nav .btn{flex:1}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+.legal-links a{color:inherit;text-decoration:underline}
 </style>
 </head>
 <body>
@@ -185,6 +186,7 @@ input:focus,select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 
   <section class="card step" data-step="5" hidden>
     <h2>Pricing and recurring payments</h2>
     <p class="sub">Here is exactly what you'll pay and when.</p>
+    <p class="sub" style="font-size:14px">Payments are processed by Stripe. We never see or store your full card number. Read our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="refund-policy.html" target="_blank" rel="noopener">Refund &amp; Cancellation Policy</a> before you pay.</p>
     <div class="price-top">
       <div><span>Due today</span><b>$300</b><small>One-time setup fee</small></div>
       <div><span>On your start date</span><b>$500</b><small id="firstDate">First month</small></div>
@@ -226,6 +228,7 @@ input:focus,select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 
   </section>
 
   <p class="foot">Akoni Virtual · akonivirtual.com · akonivirtual@gmail.com · Agreement version <span id="ver"></span></p>
+  <p class="foot legal-links"><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a> · <a href="refund-policy.html">Refund Policy</a> · <a href="cookie-policy.html">Cookie Policy</a> · <a href="#" data-cookie-settings>Cookie settings</a> · <a href="index.html#book">Contact Us</a></p>
 </main>
 
 <script type="module">
@@ -251,10 +254,11 @@ $('#fields').innerHTML = FIELDS.map(([k, l]) => {
 }).join('');
 const agent = () => Object.fromEntries(FIELDS.map(([k]) => [k, ($('#f_' + k).value || '').trim()]));
 
-// Remember unsent form values in this browser only.
+// Remember unsent form values in this browser only, and only if the visitor allowed preference storage.
 const KEY = 'akoni-agreement-draft';
-try { const d = JSON.parse(localStorage.getItem(KEY) || '{}'); for (const [k, v] of Object.entries(d.agent || {})) if ($('#f_' + k)) $('#f_' + k).value = v; if (d.term) $(`input[name=term][value="${d.term}"]`).checked = true; if (d.startDate) $('#startDate').value = d.startDate; } catch {}
-const persist = () => { try { localStorage.setItem(KEY, JSON.stringify({ agent: agent(), term: termVal(), startDate: $('#startDate').value })); } catch {} };
+const canSave = () => !!(window.AkoniConsent && AkoniConsent.has('preferences'));
+if (canSave()) try { const d = JSON.parse(localStorage.getItem(KEY) || '{}'); for (const [k, v] of Object.entries(d.agent || {})) if ($('#f_' + k)) $('#f_' + k).value = v; if (d.term) $(`input[name=term][value="${d.term}"]`).checked = true; if (d.startDate) $('#startDate').value = d.startDate; } catch {}
+const persist = () => { if (!canSave()) return; try { localStorage.setItem(KEY, JSON.stringify({ agent: agent(), term: termVal(), startDate: $('#startDate').value })); } catch {} };
 document.addEventListener('input', persist);
 
 /* ---------- Step 2 term ---------- */

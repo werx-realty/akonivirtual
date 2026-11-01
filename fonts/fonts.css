@@ -1,0 +1,3 @@
+/* Self-hosted fonts (no third-party requests). Licensed under the SIL Open Font License. */
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-display:swap;font-weight:200 800;src:url('plus-jakarta-sans.woff2') format('woff2-variations'),url('plus-jakarta-sans.woff2') format('woff2')}
+@font-face{font-family:'Source Serif 4';font-style:normal;font-display:swap;font-weight:200 900;src:url('source-serif-4.woff2') format('woff2-variations'),url('source-serif-4.woff2') format('woff2')}
