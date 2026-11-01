@@ -653,6 +653,9 @@ footer a:hover{color:#fff}
 .f-inc .ic{color:var(--accent-soft)}
 .f-block{width:100%;justify-content:center}
 .f-offer .btn-primary{background:#fff;color:var(--navy-700);box-shadow:none}
+.f-rate{font-size:19px;font-weight:800;color:var(--brand);margin-top:22px}
+.f-rate.light{color:#9fc2ff;margin:4px 0 0;text-align:center}
+.cta-box .f-rate.light{text-align:left;margin-top:16px}
 .f-fine{font-size:17px;font-weight:700;color:#dce6f5;text-align:center}
 .f-pain{background:var(--bg)}
 .f-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -721,6 +724,7 @@ footer a:hover{color:#fff}
       <h1>A full-time VA<br><span class="hl">for $500 a month.</span></h1>
       <p class="lede">Hand off follow-ups, showings, deadlines and client updates to a dedicated real estate VA. You spend your days on clients, listings and closings.</p>
       <div class="hero-ctas"><a class="btn btn-primary" href="#book">Book my free call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-ghost" href="#math">See the math</a></div>
+      <p class="f-rate">That's about $3.30 an hour for full-time help.</p>
       <ul class="f-trust"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>35 hours a week</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>No setup fee</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>No long contract</li></ul>
     </div>
     <div class="f-offer">
@@ -762,6 +766,7 @@ footer a:hover{color:#fff}
         <div class="co"><span>Deals to cover a full year</span><b id="o1">–</b></div>
         <div class="co"><span>Hours back each month</span><b id="o2">–</b></div>
         <div class="co hi"><span id="o3l">If that time brings in just 1 extra deal a month</span><b id="o3">–</b></div>
+        <p class="f-rate light">That's about $3.30 an hour for full-time help.</p>
         <a class="btn btn-white f-block" href="#book">Book my free call <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
@@ -810,6 +815,7 @@ footer a:hover{color:#fff}
       <div>
         <h2>Get your full-time VA for $500 a month.</h2>
         <p>Book a free 15-minute call. We'll look at your business and show you exactly what your VA will take off your plate.</p>
+        <p class="f-rate light">That's about $3.30 an hour for full-time help.</p>
         <ul class="f-trust light"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Full time, 35 hours a week</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>No setup fee</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>No long contract</li></ul>
       </div>
       <form class="form" id="bookForm">
@@ -844,7 +850,7 @@ footer a:hover{color:#fff}
   </div>
 </footer>
 
-<div class="f-sticky" id="sticky"><div><b>$500/month</b><span>Full-time VA</span></div><a class="btn btn-primary" href="#book">Book my free call</a></div>
+<div class="f-sticky" id="sticky"><div><b>$500/month</b><span>About $3.30 an hour</span></div><a class="btn btn-primary" href="#book">Book my free call</a></div>
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
 const $=id=>document.getElementById(id), money=n=>'$'+Math.round(n).toLocaleString();
